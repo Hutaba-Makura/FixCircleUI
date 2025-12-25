@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width"/>
+        <title>お気に入り | Comike Web Catalog</title>
+        <link href="/assets/css/header_free?v=30b-MOy7YkajHN_qT9yf4HU9sCfwds-SbzzlfGkBksI1" rel="stylesheet"/>
+        <link href="/assets/css/bundle-v1.1?v=K3O5s1-Gpw_YMCWRaXuB2XNryP_8hl4b2mur929WcEg1" rel="stylesheet"/>
+        <link href="/assets/css/bundle-layout?v=pGn-OylVeQzJBCc6mtVVnGr9PQsf3ZN1astWa2IoWII1" rel="stylesheet"/>
+        <script src="/common/js/lib/bundle?v=4lGEez3eG-qWL7PgY2cmWatRUipXq35F0ClCQUeLukY1"></script>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="@circlems"/>
+        <meta property="og:locale" content="ja_JP">
+        <meta property="og:site_name" content="コミケWebカタログ | Comike Web Catalog">
+        <meta property="og:title" content="お気に入り | Comike Web Catalog">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https://webcatalog-free.circle.ms/User/Favorites?day=Day2&amp;page=1&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">
+        <meta property="og:image" content="https://webcatalog.circle.ms/assets/images/comike/comike_summary_large_image.png">
+        <meta property="og:description" content="コミックマーケットのカタログをWebで閲覧できるサービス。Circle.msが運営。">
+        <script>
+            ;ComiketWebCatalog.AntiForgeryToken = {
+                name: '__RequestVerificationToken',
+                value: 'mj-q7-GDoZApw73LplFmd2WJn2ezWgUevGMPLKXr5KnlQqHxLLEr0OLIFTVkH6Z4sf04Qt3dWYScxLBgp8OQU65NhD_nny4F_dIaP-ye3oCqomPB0'
+            };
+
+            ComiketWebCatalog.LoginUser = {
+                DisplayName: 'Oxia',
+                IsR18: true,
+            };
+            ComiketWebCatalog.FcookieExpire = 0;
+            ComiketWebCatalog.FcookieFreeTick = 0;
+            ComiketWebCatalog.FcookieFreeBase = 180000;
+            ComiketWebCatalog.Now = 1766678999892;
+
+            ;</script>
+        <link href="/assets/css/bundle-favorites-v1.1?v=-c3WnfMlowSUmBiRl8kCa_F3w-nW5OsrrgTilZZo_cA1" rel="stylesheet"/>
+        <style>
+            .md-color.favorite-color-1 {
+                background: #FF944A;
+            }
+
+            td.favorite-color-1 {
+                background: #FF944A;
+            }
+
+            .md-color.favorite-color-2 {
+                background: #FF00FF;
+            }
+
+            td.favorite-color-2 {
+                background: #FF00FF;
+            }
+
+            .md-color.favorite-color-3 {
+                background: #FFF700;
+            }
+
+            td.favorite-color-3 {
+                background: #FFF700;
+            }
+
+            .md-color.favorite-color-4 {
+                background: #00B54A;
+            }
+
+            td.favorite-color-4 {
+                background: #00B54A;
+            }
+
+            .md-color.favorite-color-5 {
+                background: #00B5FF;
+            }
+
+            td.favorite-color-5 {
+                background: #00B5FF;
+            }
+
+            .md-color.favorite-color-6 {
+                background: #9C529C;
+            }
+
+            td.favorite-color-6 {
+                background: #9C529C;
+            }
+
+            .md-color.favorite-color-7 {
+                background: #0000FF;
+            }
+
+            td.favorite-color-7 {
+                background: #0000FF;
+            }
+
+            .md-color.favorite-color-8 {
+                background: #00FF00;
+            }
+
+            td.favorite-color-8 {
+                background: #00FF00;
+            }
+
+            .md-color.favorite-color-9 {
+                background: #FF0000;
+            }
+
+            td.favorite-color-9 {
+                background: #FF0000;
+            }
+        </style>
+        <script type="text/javascript">
+            !function(v, y, T) {
+                var S = v.location
+                  , k = "script"
+                  , D = "instrumentationKey"
+                  , C = "ingestionendpoint"
+                  , I = "disableExceptionTracking"
+                  , E = "ai.device."
+                  , b = "toLowerCase"
+                  , w = (D[b](),
+                "crossOrigin")
+                  , N = "POST"
+                  , e = "appInsightsSDK"
+                  , t = T.name || "appInsights"
+                  , n = ((T.name || v[e]) && (v[e] = t),
+                v[t] || function(l) {
+                    var u = !1
+                      , d = !1
+                      , g = {
+                        initialize: !0,
+                        queue: [],
+                        sv: "6",
+                        version: 2,
+                        config: l
+                    };
+                    function m(e, t) {
+                        var n = {}
+                          , a = "Browser";
+                        return n[E + "id"] = a[b](),
+                        n[E + "type"] = a,
+                        n["ai.operation.name"] = S && S.pathname || "_unknown_",
+                        n["ai.internal.sdkVersion"] = "javascript:snippet_" + (g.sv || g.version),
+                        {
+                            time: (a = new Date).getUTCFullYear() + "-" + i(1 + a.getUTCMonth()) + "-" + i(a.getUTCDate()) + "T" + i(a.getUTCHours()) + ":" + i(a.getUTCMinutes()) + ":" + i(a.getUTCSeconds()) + "." + (a.getUTCMilliseconds() / 1e3).toFixed(3).slice(2, 5) + "Z",
+                            iKey: e,
+                            name: "Microsoft.ApplicationInsights." + e.replace(/-/g, "") + "." + t,
+                            sampleRate: 100,
+                            tags: n,
+                            data: {
+                                baseData: {
+                                    ver: 2
+                                }
+                            }
+                        };
+                        function i(e) {
+                            e = "" + e;
+                            return 1 === e.length ? "0" + e : e
+                        }
+                    }
+                    var e, n, f = l.url || T.src;
+                    function a(e) {
+                        var t, n, a, i, o, s, r, c, p;
+                        u = !0,
+                        g.queue = [],
+                        d || (d = !0,
+                        i = f,
+                        r = (c = function() {
+                            var e, t = {}, n = l.connectionString;
+                            if (n)
+                                for (var a = n.split(";"), i = 0; i < a.length; i++) {
+                                    var o = a[i].split("=");
+                                    2 === o.length && (t[o[0][b]()] = o[1])
+                                }
+                            return t[C] || (t[C] = "https://" + ((e = (n = t.endpointsuffix) ? t.location : null) ? e + "." : "") + "dc." + (n || "services.visualstudio.com")),
+                            t
+                        }()).instrumentationkey || l[D] || "",
+                        c = (c = c[C]) ? c + "/v2/track" : l.endpointUrl,
+                        (p = []).push((t = "SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",
+                        n = i,
+                        o = c,
+                        (s = (a = m(r, "Exception")).data).baseType = "ExceptionData",
+                        s.baseData.exceptions = [{
+                            typeName: "SDKLoadFailed",
+                            message: t.replace(/\./g, "-"),
+                            hasFullStack: !1,
+                            stack: t + "\nSnippet failed to load [" + n + "] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: " + (S && S.pathname || "_unknown_") + "\nEndpoint: " + o,
+                            parsedStack: []
+                        }],
+                        a)),
+                        p.push((s = i,
+                        t = c,
+                        (o = (n = m(r, "Message")).data).baseType = "MessageData",
+                        (a = o.baseData).message = 'AI (Internal): 99 message:"' + ("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) (" + s + ")").replace(/\"/g, "") + '"',
+                        a.properties = {
+                            endpoint: t
+                        },
+                        n)),
+                        i = p,
+                        r = c,
+                        JSON && ((o = v.fetch) && !T.useXhr ? o(r, {
+                            method: N,
+                            body: JSON.stringify(i),
+                            mode: "cors"
+                        }) : XMLHttpRequest && ((s = new XMLHttpRequest).open(N, r),
+                        s.setRequestHeader("Content-type", "application/json"),
+                        s.send(JSON.stringify(i)))))
+                    }
+                    function i(e, t) {
+                        d || setTimeout(function() {
+                            !t && g.core || a()
+                        }, 500)
+                    }
+                    f && ((n = y.createElement(k)).src = f,
+                    !(o = T[w]) && "" !== o || "undefined" == n[w] || (n[w] = o),
+                    n.onload = i,
+                    n.onerror = a,
+                    n.onreadystatechange = function(e, t) {
+                        "loaded" !== n.readyState && "complete" !== n.readyState || i(0, t)
+                    }
+                    ,
+                    e = n,
+                    T.ld < 0 ? y.getElementsByTagName("head")[0].appendChild(e) : setTimeout(function() {
+                        y.getElementsByTagName(k)[0].parentNode.appendChild(e)
+                    }, T.ld || 0));
+                    try {
+                        g.cookie = y.cookie
+                    } catch (h) {}
+                    function t(e) {
+                        for (; e.length; )
+                            !function(t) {
+                                g[t] = function() {
+                                    var e = arguments;
+                                    u || g.queue.push(function() {
+                                        g[t].apply(g, e)
+                                    })
+                                }
+                            }(e.pop())
+                    }
+                    var s, r, o = "track", c = "TrackPage", p = "TrackEvent", o = (t([o + "Event", o + "PageView", o + "Exception", o + "Trace", o + "DependencyData", o + "Metric", o + "PageViewPerformance", "start" + c, "stop" + c, "start" + p, "stop" + p, "addTelemetryInitializer", "setAuthenticatedUserContext", "clearAuthenticatedUserContext", "flush"]),
+                    g.SeverityLevel = {
+                        Verbose: 0,
+                        Information: 1,
+                        Warning: 2,
+                        Error: 3,
+                        Critical: 4
+                    },
+                    (l.extensionConfig || {}).ApplicationInsightsAnalytics || {});
+                    return !0 !== l[I] && !0 !== o[I] && (t(["_" + (s = "onerror")]),
+                    r = v[s],
+                    v[s] = function(e, t, n, a, i) {
+                        var o = r && r(e, t, n, a, i);
+                        return !0 !== o && g["_" + s]({
+                            message: e,
+                            url: t,
+                            lineNumber: n,
+                            columnNumber: a,
+                            error: i,
+                            evt: v.event
+                        }),
+                        o
+                    }
+                    ,
+                    l.autoExceptionInstrumented = !0),
+                    g
+                }(T.cfg));
+                function a() {
+                    T.onInit && T.onInit(n)
+                }
+                (v[t] = n).queue && 0 === n.queue.length ? (n.queue.push(a),
+                n.trackPageView({})) : a()
+            }(window, document, {
+                src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js",
+                crossOrigin: "anonymous",
+                cfg: {
+                    connectionString: "InstrumentationKey=020a95a1-a393-4d6d-97d9-fbacc3defc78;IngestionEndpoint=https://japaneast-1.in.applicationinsights.azure.com/;LiveEndpoint=https://japaneast.livediagnostics.monitor.azure.com/;ApplicationId=1f79042c-d19e-4ad3-bce0-f94d75665b0b"
+                }
+            });
+        </script>
+    </head>
+    <body class="page-comike">
+        <div class="side-background left-side-bg"></div>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+        <header class="m-header">
+            <div class="m-container m-header-inner">
+                <h1>
+                    <a href="/">
+                        <img alt="Comike Web Catalog" src="/assets/images/common/img_brand.png"/>
+                    </a>
+                </h1>
+                <div class="m-headbanner">
+                    <ul class="md-pr pr-horizontal clearfix" style="margin-top: 0px; padding: 5px;">
+                        <a href="https://confianza0330.com/" data-ad="1495" target="_blank">
+                            <img src="https://emesadvertlogj07.blob.core.windows.net/advert-banner/cb7550e8-02dc-489d-8eb1-6b4e572990ab.png" title="株式会社Confianza" alt="株式会社Confianza" data-ad="1495" data-type="advert" data-link="https://confianza0330.com/"/>
+                        </a>
+                        <a href="https://www.taiyoushuppan.co.jp/" data-ad="990" target="_blank">
+                            <img src="https://emesadvertlogj07.blob.core.windows.net/advert-banner/c53ca014-b619-4bc4-98f9-0f0b54b36f8a.jpg" title="大陽出版株式会社" alt="大陽出版株式会社" data-ad="990" data-type="advert" data-link="https://www.taiyoushuppan.co.jp/"/>
+                        </a>
+                    </ul>
+                </div>
+                <div class="d-circle-edit">
+                    <a href="https://succession.circle.ms/Home/Index/220" class="c-btn btn-add">サークル情報を編集する</a>
+                </div>
+                <div class="m-userstate">
+                    <a href="/Billing">
+                        <img class="h-float--right" src="/assets/images/comike/sprites/medal/silver.png" width="30" height="37"/>
+                    </a>
+                    Oxia
+                    &nbsp;[&nbsp;<a href="/Account/LogOut">ログアウト</a>
+                    &nbsp;]
+					Ｒ
+                    <br/>
+                    <div class="tracking_life">
+                        <i class="fa fa-heart life_on" data-fcookieexpireheart1 aria-hidden="true"></i>
+                        <i class="fa fa-heart life_on" data-fcookieexpireheart2 aria-hidden="true"></i>
+                        <i class="fa fa-heart life_on" data-fcookieexpireheart3 aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="head-searchbox-form">
+                    <form action="/Circle/List" method="get">
+                        <div class="head-searchbox-form__input">
+                            <input id="keyword" maxlength="50" name="keyword" type="text" data-bind="enable: KeywordEnabled()"/>
+                        </div>
+                        <div class="head-searchbox-form__btn">
+                            <input class="s-btn--search" type="submit" value="検索" data-bind="loginDialog">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function(event) {
+                setTimeout(function() {
+                    $('div.m-base--main').css("opacity", "1.0");
+                }, 1000);
+            });
+        </script>
+        <script src="/assets/Circlems2016Style/PC/js/pclayout.js"></script>
+        <div class="m-contents m-container">
+            <!--LoginAfterTop_Head.parts-->
+            <!--LoginAfterTop_Head.parts end -->
+            <div class="m-tabnav m-headitem">
+                <div class="m-tabnav-sub">
+                    <ul class="m-tabnav-sub__list">
+                        <li>
+                            <a href="/" class="s-tabnav--map ">会場MAP</a>
+                        </li>
+                        <li>
+                            <a href="/CircleRapid/Cut2" class="s-tabnav--circle ">サークル一覧</a>
+                        </li>
+                        <li>
+                            <a href="/Search" class="s-tabnav--search ">詳細検索</a>
+                        </li>
+                        <li>
+                            <a href="/User/Favorites" class="s-tabnav--favorite s-tabnav--favorite_hover">お気に入り</a>
+                        </li>
+                        <li>
+                            <a href="/Booth" class="s-tabnav--booth ">企業ブース</a>
+                        </li>
+                        <li>
+                            <a class="s-tabnav--cosplay " href="/Cosplay">コスプレイヤー検索</a>
+                        </li>
+                        <li>
+                            <a class="s-tabnav--comicos " href="/Print">印刷</a>
+                        </li>
+                        <li>
+                            <a class="s-tabnav--pdfdownload " href="/Print/PaperIndex" data-bind="loginDialog">ダウンロード</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-base--main" style='opacity: 0;'>
+                <div class="view-index-page" id="mainSection">
+                    <img class="loading" src="/Home/Loading" data-bind="visible: isLoading()"/>
+                    <section class="m-section">
+                        <div class="m-secnav">
+                            <div class="m-secnav-date">
+                                <ul class="m-secnav-list">
+                                    <li>
+                                        <a class="favnavi-a" href="/User/Favorites"></a>
+                                    </li>
+                                    <li>
+                                        <a class="favnavi-c" href="/User"></a>
+                                    </li>
+                                    <li>
+                                        <a class="favnavi-d" href="/User/Twitter"></a>
+                                    </li>
+                                    <li>
+                                        <a class="favnavi-e" href="/User/ImportExport"></a>
+                                    </li>
+                                    <li>
+                                        <a class="favnavi-f" href="/User/DvdMenu"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="m-favorite-base">
+                            <div class="favorite_btn_area">
+                                <a href="#" class="c-btn c-btn--orange" data-bind="click: ClickActivitySetting">アクティビティメール通知設定</a>
+                                <a href="#" class="c-btn c-btn--orange" data-bind="click: ClickFavoriteSetting">お気に入りの解除設定</a>
+                            </div>
+                            <div class="m-section-body">
+                                <div class="m-localnav">
+                                    <div class="m-localnav-date">
+                                        <ul class="m-localnav-list">
+                                            <li>
+                                                <a href="/User/Favorites?day=0&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending" class="s-localnav--all date-all ">ALL</a>
+                                            </li>
+                                            <li>
+                                                <a href="/User/Favorites?day=1&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending" class="s-localnav--first date-1 ">1日目</a>
+                                            </li>
+                                            <li>
+                                                <a href="/User/Favorites?day=2&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending" class="s-localnav--second date-2 s-localnav--second_hover">2日目</a>
+                                            </li>
+                                            <li></li>
+                                            <li>
+                                                <a href="/User/FavoritesBooth" class="s-localnav--company date-no">企業ブース</a>
+                                            </li>
+                                            <li>
+                                                <a href="/User/FavoritesCosplayer" class="s-localnav--cosplay date-no">コスプレ</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="m-base--inner">
+                                    <div class="m-section2-body">
+                                        <div class="md-selectcolor d-favorites-body form-activitysetting-js" id="fav-activity-mail-settings" style="display: none;" data-bind="visible: ShowActivitySetting">
+                                            <header class="m-section2-head">
+                                                <div class="md-contentsection">
+                                                    <h3>アクティビティのメール通知設定</h3>
+                                                </div>
+                                            </header>
+                                            <p>
+                                                お気に入りにいれているサークルの最新情報を1週間に1回（または1日に1回）メールでお知らせしています<br/>
+                                                アクティビティメール通知設定をするには <a href="https://auth2.circle.ms/Account/ChangeEmail1" target="_blank">こちら</a>
+                                                からメールアドレスを設定してください<br/>
+                                                ※アクティビティメールを受信するメールアドレスはCircle.ms・コミケWebカタログのログインメールアドレスと共通のメールアドレスになります<br/>
+                                                変更する際はログインメールアドレスも変更となりますのでご注意ください
+                                <br/>
+                                            </p>
+                                            <div>
+                                                <form action="/User/ActivitySave" method="post">
+                                                    <input name="__RequestVerificationToken" type="hidden" value="HIbfxPcDBgtUk3HXppfqlpaoJtstjVei1j1A4c9IrLO_JCt3yfBa_s2PsOJ_Jyb5UBTiLD54rpV3lhMo-4Te9Oti-LNCnEZ66LONTMlzSFskyRxm0"/>
+                                                    <div class="m-searchwidget">
+                                                        <dl class="m-tableset-item">
+                                                            <dt>設定されているメールアドレス
+											</dt>
+                                                            <dd>
+                                                                <div class="m-tableset-item__box">
+                                                                    <div class="m-searchwidget-list">syarokilimanjaro@gmail.com
+                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                        <dl class="m-tableset-item">
+                                                            <dt>通知設定
+											</dt>
+                                                            <dd>
+                                                                <div class="m-tableset-item__box">
+                                                                    <div class="m-searchwidget-list">
+                                                                        <input checked="checked" data-bind="checked:ActivityIsSend" name="メール送信" style="vertical-align: middle;" type="checkbox" value="true"/>
+                                                                        <input name="メール送信" type="hidden" value="false"/>お気に入りに登録しているサークルのアクティビティ情報をメールで受取る
+													
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                        <dl class="m-tableset-item">
+                                                            <dt>通知頻度
+											</dt>
+                                                            <dd>
+                                                                <div class="m-tableset-item__box">
+                                                                    <div class="m-searchwidget-list">
+                                                                        <ul>
+                                                                            <li>
+                                                                                <input checked="checked" data-bind="checked:ActivityCycle, checkedValue:0" name="送信周期" style="vertical-align: middle;" type="radio" value="0"/>1週間に1回（毎週金曜日）
+                                                                            </li>
+                                                                            <li>
+                                                                                <input data-bind="checked:ActivityCycle, checkedValue:1" name="送信周期" style="vertical-align: middle;" type="radio" value="1"/>1日に1回
+                                                                            </li>
+                                                                        </ul>
+                                                                        <span style="color: red;">※ 1週間(または1日)のうちに、お気に入り登録されているサークルさんの更新が無い場合メール通知は行われません。</span>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                        <dl class="js-as-message-box" style="display: none" data-bind="visible: ActivitySaveComplete">
+                                                            <dt style='padding: 10px;'></dt>
+                                                            <dd class="js-as-message" style="color: red;">設定を保存しました。
+											</dd>
+                                                        </dl>
+                                                        <p class="inout-btn">
+                                                            <a href="#" class="btn-import btn-saveactivity-js" data-bind="click: ClickActivitySave">設定を保存する</a>
+                                                        </p>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="md-selectcolor d-favorites-body" style="display: none;" data-bind="visible: ShowFavoriteSetting">
+                                            <header class="m-section2-head">
+                                                <div class="md-contentsection">
+                                                    <h3>お気に入りの解除設定</h3>
+                                                </div>
+                                            </header>
+                                            <div class="m-section2-body">
+                                                <dl class="m-tableset-item">
+                                                    <dt>現在の設定</dt>
+                                                    <dd>
+                                                        <div class="m-tableset-item__box">
+                                                            <span data-bind="visible: !FavoriteSettingEachDelServer()">すべてのWebカタログからお気に入りを解除する</span>
+                                                            <span data-bind="visible: FavoriteSettingEachDelServer()">コミケWebカタログからのみお気に入りを解除する</span>
+                                                        </div>
+                                                    </dd>
+                                                </dl>
+                                                <dl class="m-tableset-item">
+                                                    <dt>解除設定</dt>
+                                                    <dd>
+                                                        <div class="m-tableset-item__box">
+                                                            <ul>
+                                                                <li>
+                                                                    <input name="お気に入り設定" type="radio" value="0" data-bind="checked: FavoriteSettingEachDel">すべてのWebカタログからお気に入りを解除する
+                                                                </li>
+                                                                <li>
+                                                                    <input name="お気に入り設定" type="radio" value="1" data-bind="checked: FavoriteSettingEachDel">コミケWebカタログからのみお気に入りを解除する
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </dd>
+                                                </dl>
+                                                <dl class="js-as-message-box" style="display: none" data-bind="visible: FavoriteSaveComplete">
+                                                    <dt></dt>
+                                                    <dd class="js-as-message" style="color: red;">設定を保存しました。
+					            </dd>
+                                                </dl>
+                                                <p class="inout-btn">
+                                                    <a href="#" class="btn-import" data-bind="click: ClickFavoriteSave">設定を保存する</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="favorite-colorbox clearfix">
+                                            <div class="favorite-colorbox-left">
+                                                お気に入りサークルのカラーで絞り込むことができます。<br/>
+                                                絞り込んだ状態で「登録解除」を選択すると、絞り込んだサークル全ての登録が解除されます。<br/>
+                                                <span style="color: red;">※ALLの状態で登録解除を選択すると、登録されている全てのお気に入りが解除されます。</span>
+                                            </div>
+                                            <div class="favorite-colorbox-right" id="favcolors">
+                                                <form name="form1">
+                                                    <select class="pulldown-menu1 md-color favorite-color-0" name="select1" onChange=" if (document.form1.select1.value) {location.href = document.form1.select1.value;} ">
+                                                        <option value="/User/Favorites?Day=Day2&amp;Color=0&amp;orderBy=Space&amp;SortOrder=Ascending">ALL</option>
+                                                        <option class="md-color favorite-color-1" value="/User/Favorites?Day=2&amp;Color=1&amp;orderBy=Space&amp;SortOrder=Ascending" 1>オレンジ</option>
+                                                        <option class="md-color favorite-color-2" value="/User/Favorites?Day=2&amp;Color=2&amp;orderBy=Space&amp;SortOrder=Ascending" 2>ピンク</option>
+                                                        <option class="md-color favorite-color-3" value="/User/Favorites?Day=2&amp;Color=3&amp;orderBy=Space&amp;SortOrder=Ascending" 3>イエロー</option>
+                                                        <option class="md-color favorite-color-4" value="/User/Favorites?Day=2&amp;Color=4&amp;orderBy=Space&amp;SortOrder=Ascending" 4>グリーン</option>
+                                                        <option class="md-color favorite-color-5" value="/User/Favorites?Day=2&amp;Color=5&amp;orderBy=Space&amp;SortOrder=Ascending" 5>ライトブルー</option>
+                                                        <option class="md-color favorite-color-6" value="/User/Favorites?Day=2&amp;Color=6&amp;orderBy=Space&amp;SortOrder=Ascending" 6>パープル</option>
+                                                        <option class="md-color favorite-color-7" value="/User/Favorites?Day=2&amp;Color=7&amp;orderBy=Space&amp;SortOrder=Ascending" 7>ブルー</option>
+                                                        <option class="md-color favorite-color-8" value="/User/Favorites?Day=2&amp;Color=8&amp;orderBy=Space&amp;SortOrder=Ascending" 8>ライトグリーン</option>
+                                                        <option class="md-color favorite-color-9" value="/User/Favorites?Day=2&amp;Color=9&amp;orderBy=Space&amp;SortOrder=Ascending" 9>レッド</option>
+                                                    </select>
+                                                </form>
+                                                <a href="#" class="c-btn c-btn--action" title="お気に入りを解除" data-bind="click: function() { return ClickRemoveFavorite(0); }">登録解除</a>
+                                            </div>
+                                        </div>
+                                        <!-- favorite-colorbox clearfix -->
+                                        <div id="boxA">
+                                            <div class="m-pagination no-margin">
+                                                <div class="m-pagination-container">
+                                                    <div class="m-pagination-item m-pagination-nav">&lt;&lt;</div>
+                                                    <div class="m-pagination-item m-pagination-nav">&lt;前</div>
+                                                    <ol class="m-pagination-item m-pagination-list">
+                                                        <li>1</li>
+                                                        <li>
+                                                            <a href="/User/Favorites?day=Day2&amp;page=2&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">2</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/User/Favorites?day=Day2&amp;page=3&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/User/Favorites?day=Day2&amp;page=4&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">4</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/User/Favorites?day=Day2&amp;page=5&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">5</a>
+                                                        </li>
+                                                        <li>...</li>
+                                                    </ol>
+                                                    <div class="m-pagination-item m-pagination-nav">
+                                                        <a href="/User/Favorites?day=Day2&amp;page=2&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">次 &gt;</a>
+                                                    </div>
+                                                    <div class="m-pagination-item m-pagination-nav">
+                                                        <a href="/User/Favorites?day=Day2&amp;page=27&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">&gt;&gt;</a>
+                                                    </div>
+                                                    <br/>
+                                                    <p class='m-pagination-label'>263 件中 1 件目 - 10 件目</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="boxB">
+                                            <dl class="m-sortbox c-list--vline h-float--right">
+                                                <dt>表示件数
+                                    </dt>
+                                                <dd>
+                                                    <a href="/User/Favorites?day=Day2&amp;page=1&amp;count=20&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">20</a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="/User/Favorites?day=Day2&amp;page=1&amp;count=40&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">40</a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="/User/Favorites?day=Day2&amp;page=1&amp;count=80&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">80</a>
+                                                </dd>
+                                            </dl>
+                                            <br/>
+                                            <dl class="m-sortbox c-list--vline h-float--right" data-bind="with: webPaper">
+                                                <dt>サークルカット</dt>
+                                                <dd class="m-sortbox-cut">
+                                                    <a class="webcatalog-toggle-image" href="#" data-bind="text: dispString(), click: ClickAction"></a>
+                                                </dd>
+                                            </dl>
+                                            <br/>
+                                            <dl class="m-sortbox c-list--vline h-float--right">
+                                                <dt>並び順
+                                    </dt>
+                                                <dd>
+                                                    <a href="/User/Favorites?day=Day2&amp;page=1&amp;count=10&amp;color=0&amp;orderBy=FavoriteDate&amp;SortOrder=Ascending">▼登録順</a>
+                                                </dd>
+                                                <dd>▼配置順</dd>
+                                                <dd>
+                                                    <a href="/User/Favorites?day=Day2&amp;page=1&amp;count=10&amp;color=0&amp;orderBy=Date&amp;SortOrder=Ascending">▼新着順</a>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <table class="md-infotable t-user-favorites" style="display: none" data-bind="visible: !isLoading() && Circles().length > 0">
+                                            <tr>
+                                                <th class="infotable-position">色</th>
+                                                <th class="infotable-cut">カット</th>
+                                                <th class="infotable-space">配置/アイコン</th>
+                                                <th>サークル名</th>
+                                                <th class="infotable-distribution">ジャンル</th>
+                                            </tr>
+                                            <!-- ko foreach: Circles() -->
+                                            <tr class="infotable-sep">
+                                                <td colspan="5">&nbsp;</td>
+                                            </tr>
+                                            <tr class="webcatalog-circle-list-detail" data-bind="attr: { id: Id }">
+                                                <td rowspan="3" class="infotable-box infotable-space favorite-color" data-bind="css: favCss2()"></td>
+                                                <td class="circle-cut" rowspan="3">
+                                                    <div>
+                                                        <a data-bind="attr: {href: DetailUrl() },foreach:SwitchingCutUrls3()">
+                                                            <div class="img-circlecut">
+                                                                <img class="img-circlecut img-webcirclecutlist" data-bind="attr: {src : $data }"/>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td class="infotable-space">
+                                                    <span data-bind="visible: !IsReject">
+                                                        <span data-bind="text: HaichiStr"></span>
+                                                    </span>
+                                                    <span data-bind="visible: IsReject">抽選洩れ</span>
+                                                </td>
+                                                <td class="infotable-circlename">
+                                                    <a data-bind="attr: {href: DetailUrl() }, text: Name"></a>
+                                                </td>
+                                                <td class="infotable-left infotable-genre" data-bind="text: Genre"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="infotable-left" colspan="3">
+                                                    <a class="c-btn c-btn--blue" data-bind="visible: !favMemoEditing() && favorite(), click: clickFavMemoEdit">メモ編集</a>
+                                                    <span data-bind="text: favMemo(), visible: !favMemoEditing(), click: clickFavMemoEdit"></span>
+                                                    <input style="width: 85%" data-bind="value: favMemo, visible: favMemoEditing()" maxlength="2048"/>
+                                                    <a class="c-btn c-btn--orange js-btn-action" data-bind="visible: favMemoEditing(), click: clickFavMemoSave">完了</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <div class="md-support">
+                                                        <ul class="support-list">
+                                                            <li>
+                                                                <img class="support-list-new" src="/common/images/common/img_icon_new_off.png" alt="NEW" data-bind="style: {cursor: IsNew ? 'pointer' : 'default'},attr: { src: NewIcon() }"/>
+                                                            </li>
+                                                            <li>
+                                                                <img class="support-list-kokuti" src="/common/images/common/img_icon_kokuti_off.png" alt="告知画像" data-bind="style: {cursor: HasKokutiImage ? 'pointer' : 'default'},attr: { src: KokutiIcon() }, click: function() { return GoToDetail('#kokuti'); }"/>
+                                                            </li>
+                                                            <li>
+                                                                <img class="support-list-hanpu" src="/common/images/common/img_icon_hanpu_off.png" alt="頒布予定" data-bind="style: {cursor: HasHanpuImage ? 'pointer' : 'default'},attr: { src: HanpuIcon() }, click: function() { return GoToDetail('#hanpu'); }"/>
+                                                            </li>
+                                                            <li>
+                                                                <img class="support-list-pixiv" src="/common/images/common/img_icon_pixiv_off.png" alt="pixiv" data-bind="style: {cursor: IsPixivRegistered ? 'pointer' : 'default'},attr: { src: PixivIcon() }, click: function() { return GoToDetail('#'); }"/>
+                                                            </li>
+                                                            <li>
+                                                                <img class="support-list-twitter" src="/common/images/common/img_icon_twitter_off.png" alt="X(Twitter)" data-bind="style: {cursor: IsTwitterRegistered ? 'pointer' : 'default'},attr: { src: TwitterIcon() }, click: function() { return GoToDetail('#'); }"/>
+                                                            </li>
+                                                            <li>
+                                                                <img class="support-list-niconico" src="/common/images/common/img_icon_nico_off.png" alt="ニコニコ動画" data-bind="style: {cursor: IsNiconicoRegistered ? 'pointer' : 'default'},attr: { src: NicoIcon() }, click: function() { return GoToDetail('#'); }"/>
+                                                            </li>
+                                                            <li>
+                                                                <img class="support-list-clipstudio" src="/common/images/common/img_icon_clipstudio_off.png" alt="CLIPSTUDIO" data-bind="style: {cursor: IsClipstudioRegistered ? 'pointer' : 'default'},attr: { src: ClipstudioIcon() }, click: function() { return GoToDetail('#'); }"/>
+                                                            </li>
+                                                            <li>
+                                                                <img class="support-list-myhome" src="/common/images/common/img_icon_myhome_off.png" alt="Webサイト" data-bind="style: {cursor: WebSite ? 'pointer' : 'default'},attr: { src: WebSiteIcon() }, click: GoToWeb"/>
+                                                            </li>
+                                                            <li>
+                                                                <img class="support-list-book" src="/common/images/common/img_icon_book_off.png" alt="書店" data-bind="style: {cursor: IsOnlineBooksRegistered ? 'pointer' : 'default'},attr: { src: BookIcon() }, click: function() { return GoToDetail('#books'); }"/>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" target="_blank" data-bind="attr : { href: CircleId > 0 ? ('https://portal.circle.ms/Circle/Index/'+CircleId) : '' }">
+                                                                    <img class="" data-bind="attr : { src: CirclemsIcon() }" src="/common/images/common/img_icon_circle_off.png" alt="Circle.ms"/>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <img class="support-list-cashless" src="/common/images/common/img_icon_cashless_off.png" alt="キャッシュレス決済利用可" data-bind="style: {cursor: ( CanCashless ? 'pointer' : 'default')},attr: { src: CashlessIcon() }"/>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="webcatalog-favorite-dialog-color">
+                                                            <ul class="m-colorbox-list">
+                                                                <li>
+                                                                    <label>
+                                                                        <span class="c-block" style="background-color: #FF944A">
+                                                                            <input type="radio" value="1" data-bind="checked: favColor, attr: { name: 'favColor' + Id }"/>
+                                                                        </span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label>
+                                                                        <span class="c-block" style="background-color: #FF00FF">
+                                                                            <input type="radio" value="2" data-bind="checked: favColor, attr: { name: 'favColor' + Id }"/>
+                                                                        </span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label>
+                                                                        <span class="c-block" style="background-color: #FFF700">
+                                                                            <input type="radio" value="3" data-bind="checked: favColor, attr: { name: 'favColor' + Id }"/>
+                                                                        </span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label>
+                                                                        <span class="c-block" style="background-color: #00B54A">
+                                                                            <input type="radio" value="4" data-bind="checked: favColor, attr: { name: 'favColor' + Id }"/>
+                                                                        </span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label>
+                                                                        <span class="c-block" style="background-color: #00B5FF">
+                                                                            <input type="radio" value="5" data-bind="checked: favColor, attr: { name: 'favColor' + Id }"/>
+                                                                        </span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label>
+                                                                        <span class="c-block" style="background-color: #9C529C">
+                                                                            <input type="radio" value="6" data-bind="checked: favColor, attr: { name: 'favColor' + Id }"/>
+                                                                        </span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label>
+                                                                        <span class="c-block" style="background-color: #0000FF">
+                                                                            <input type="radio" value="7" data-bind="checked: favColor, attr: { name: 'favColor' + Id }"/>
+                                                                        </span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label>
+                                                                        <span class="c-block" style="background-color: #00FF00">
+                                                                            <input type="radio" value="8" data-bind="checked: favColor, attr: { name: 'favColor' + Id }"/>
+                                                                        </span>
+                                                                    </label>
+                                                                </li>
+                                                                <li>
+                                                                    <label>
+                                                                        <span class="c-block" style="background-color: #FF0000">
+                                                                            <input type="radio" value="9" data-bind="checked: favColor, attr: { name: 'favColor' + Id }"/>
+                                                                        </span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <p class="md-btn">
+                                                            <a class="c-btn js-btn-add" title="お気に入りに追加" data-bind="visible: !favorite(), enabled: false">未登録</a>
+                                                            <a href="#" class="c-btn c-btn--action js-btn-remove" title="お気に入りを解除" data-bind="visible: favorite(), click: ClearFav" style="display: none">登録解除</a>
+                                                        </p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!-- /ko -->
+                                        </table>
+                                        <div class="hl-centerbox">
+                                            <div class="m-pagination">
+                                                <div class="m-pagination-container">
+                                                    <div class="m-pagination-item m-pagination-nav">&lt;&lt;</div>
+                                                    <div class="m-pagination-item m-pagination-nav">&lt;前</div>
+                                                    <ol class="m-pagination-item m-pagination-list">
+                                                        <li>1</li>
+                                                        <li>
+                                                            <a href="/User/Favorites?day=Day2&amp;page=2&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">2</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/User/Favorites?day=Day2&amp;page=3&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/User/Favorites?day=Day2&amp;page=4&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">4</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/User/Favorites?day=Day2&amp;page=5&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">5</a>
+                                                        </li>
+                                                        <li>...</li>
+                                                    </ol>
+                                                    <div class="m-pagination-item m-pagination-nav">
+                                                        <a href="/User/Favorites?day=Day2&amp;page=2&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">次 &gt;</a>
+                                                    </div>
+                                                    <div class="m-pagination-item m-pagination-nav">
+                                                        <a href="/User/Favorites?day=Day2&amp;page=27&amp;count=10&amp;color=0&amp;orderBy=Space&amp;SortOrder=Ascending">&gt;&gt;</a>
+                                                    </div>
+                                                    <br/>
+                                                    <p class='m-pagination-label'>263 件中 1 件目 - 10 件目</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <ul class="m-footbanner">
+                    <li>
+                        <a href="https://www.comiket.co.jp/" data-ad="127" target="_blank">
+                            <img src="https://webcatalogj07.blob.core.windows.net/bunner/fb1.gif" title="コミックマーケット公式サイト" alt="コミックマーケット公式サイト" data-ad="127" data-type="advert" data-link="https://www.comiket.co.jp/"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.meiji.ac.jp/manga/yonezawa_lib/" data-ad="129" target="_blank">
+                            <img src="https://webcatalogj07.blob.core.windows.net/bunner/fb3.gif" title="米沢嘉博記念図書館" alt="米沢嘉博記念図書館" data-ad="129" data-type="advert" data-link="https://www.meiji.ac.jp/manga/yonezawa_lib/"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://portal.circle.ms/" data-ad="130" target="_blank">
+                            <img src="https://webcatalogj07.blob.core.windows.net/bunner/fb5.png" title="有限会社サークルドットエムエス" alt="有限会社サークルドットエムエス" data-ad="130" data-type="advert" data-link="https://portal.circle.ms/"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="side-background right-side-bg"></div>
+        <footer>
+            <div class="comike_footer">
+                <div class="comike_footer_left">
+                    <a href="/">
+                        <img src="/assets/images/common/img_top_brand.png" alt="コミケウェブカタログ｜Comike Web Catalog" title="コミケウェブカタログ｜Comike Web Catalog">
+                    </a>
+                    <a href="/Home/NoPc">
+                        <span class="mobile_switching">モバイル版に切り替え</span>
+                    </a>
+                </div>
+                <!--comike_footer_right-->
+                <div class="comike_footer_right">
+                    <!--Powered By-->
+                    <p>【Powered By】</p>
+                    <ul class="m-footbanner">
+                        <li>
+                            <a href="https://www.cosat.com/" data-ad="124" target="_blank">
+                                <img src="https://webcatalogj07.blob.core.windows.net/bunner/cosat_logo.gif" title="株式会社コサット" alt="株式会社コサット" data-ad="124" data-type="advert" data-link="https://www.cosat.com/"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://azure.microsoft.com/ja-jp/" data-ad="125" target="_blank">
+                                <img src="https://webcatalogj07.blob.core.windows.net/bunner/ms_bunner.png" title="日本マイクロソフト株式会社" alt="日本マイクロソフト株式会社" data-ad="125" data-type="advert" data-link="https://azure.microsoft.com/ja-jp/"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.pnop.co.jp/" data-ad="126" target="_blank">
+                                <img src="https://webcatalogj07.blob.core.windows.net/bunner/pnop_bunner.png" title="株式会社pnop" alt="株式会社pnop" data-ad="126" data-type="advert" data-link="https://www.pnop.co.jp/"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://ioea.info/" data-ad="438" target="_blank">
+                                <img src="https://webcatalogj07.blob.core.windows.net/bunner/circlems/banner_ioea_200x40.png" title="I.O.E.A" alt="I.O.E.A" data-ad="438" data-type="advert" data-link="https://ioea.info/"/>
+                            </a>
+                        </li>
+                    </ul>
+                    <p>The Powered By Windows Azure mark is a registered trademarks of Microsoft Corporation in the United States and other countries, and are used under license from Microsoft.</p>
+                    <div class="footer_content">
+                        <ul>
+                            <li>
+                                <a href="https://www.comiket.co.jp/">
+                                    <img src="/assets/images/common/comike_logo.png" alt="コミックマーケット公式サイト" title="コミックマーケット公式サイト">
+                                </a>
+                                <a href="https://portal.circle.ms/">
+                                    <img src="/assets/images/common/img_circlems.png" alt="Circle.ms" title="Circle.ms">
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <span class="arrow">規約</span>
+                            </li>
+                            <li>
+                                <a class="open-dialog" href="https://docs.circle.ms/footer/agreement.html?keepThis=true&TB_iframe=true&height=500&width=800">利用規約</a>
+                            </li>
+                            <li>
+                                <a class="open-dialog" href="https://docs.circle.ms/footer/sctl01.html">特定商取引法</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <span class="arrow">ご利用にあたって</span>
+                            </li>
+                            <li>
+                                <a class="open-dialog" href="https://docs.circle.ms/footer/privacypolicy.html?keepThis=true&TB_iframe=true&height=500&width=800">プライバシーポリシー</a>
+                            </li>
+                            <li>
+                                <a class="open-dialog" href="https://docs.circle.ms/footer/copyright.html?keepThis=true&TB_iframe=true&height=500&width=800">著作権について</a>
+                            </li>
+                            <li>
+                                <a href="https://www.comiket.co.jp/Trademark_J.html" target="_blank">登録商標に関して</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <span class="arrow">お問い合わせ</span>
+                            </li>
+                            <li>
+                                <a href="https://portal.circle.ms/Account/Register1">新規会員登録</a>
+                            </li>
+                            <li>
+                                <a href="https://auth2.circle.ms/Account/WithDraw1">退会</a>
+                            </li>
+                            <li>
+                                <a href="https://docs.circle.ms/webcatalog/" target="_blank">ヘルプ(総合ガイド)</a>
+                            </li>
+                            <li>
+                                <a href="/Home/Inquiry">お問い合わせ/通報</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <span class="arrow">有料会員について</span>
+                            </li>
+                            <li>
+                                <a href="https://docs.circle.ms/webcatalog/ctn/credit/002.html" target="_blank">課金プランについて</a>
+                            </li>
+                            <li>
+                                <a href="/Billing/Selectplan">有料会員登録</a>
+                            </li>
+                            <li>
+                                <a href="/Billing/Cancel1">有料会員解約</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--comike_footer_right-->
+            </div>
+        </footer>
+        <!-- dialog -->
+        <div id="kotak-dialog">
+            <h3 class="title">
+                Dialog<a href="#" class="close">&times;</a>
+            </h3>
+            <div class="isi-dialog">
+                <div class="button-wrapper">
+                    <button class="close">Close</button>
+                </div>
+                <div id="iframeContainer"></div>
+            </div>
+        </div>
+        <div id="dialog-overlay"></div>
+        <!-- /dialog -->
+        <!-- dialog -->
+        <div id="kotak-dialog">
+            <h3 class="title">
+                Dialog<a href="#" class="close">&times;</a>
+            </h3>
+            <div class="isi-dialog">
+                <div class="button-wrapper">
+                    <button class="close">Close</button>
+                </div>
+                <div id="iframeContainer"></div>
+            </div>
+        </div>
+        <div id="dialog-overlay"></div>
+        <!-- /dialog -->
+        <script src="/assets/js/circle/bundle-cut-v1.1?v=mGRkMRBHh-gCt31tgR2CuCU6luegZprircXfqJepUas1"></script>
+        <script type="application/json" id="TheModel">
+            {
+                "newerTime": 3975408599892.6016,
+                "Sas": "?sv=2016-05-31&sr=c&sig=IxUGVIin93UoNkZwOnv6FEPt14Wf7TT%2FkzXgLkkkKLk%3D&se=2025-12-25T17%3A30%3A59Z&sp=r",
+                "Circles": [
+                    {
+                        "Id": 22012172,
+                        "CircleId": 10425246,
+                        "Name": "くまちゃん製麺",
+                        "Author": "くまた",
+                        "IsReject": false,
+                        "Hall": "東",
+                        "Day": "水",
+                        "Block": "ア",
+                        "Space": "19a",
+                        "HaichiStr": "水曜日 東ア19a",
+                        "Is2SP": false,
+                        "IsMain": true,
+                        "Loc": 17,
+                        "Favorite": {
+                            "Color": 9,
+                            "Memo": ""
+                        },
+                        "Genre": "ギャルゲー",
+                        "CircleCutUrls": [
+                            "/Spa/CachedImage/22012172/1/cba53800-5af2-4405-bfae-f598932a0032/3967236396413"
+                        ],
+                        "WebCircleCutUrls": [
+                            "/Spa/CachedImage/22012172/2/f4b4fb1a-baed-4c94-ab25-25f50e7c1fa4/3967239160988"
+                        ],
+                        "MovieCutUrls": [
+                            null
+                        ],
+                        "Image1": null,
+                        "Image2": null,
+                        "BookImage": {
+                            "Id": "b0c14136-0e63-4501-099b-08de3d93a17a",
+                            "公開サークルId": 22012172,
+                            "サムネイル画像": "/Spa/CachedImage/22012172/4/b0c14136-0e63-4501-099b-08de3d93a17a/1766551323918",
+                            "既定表示画像": "/Spa/BigImage/22012172/4/b0c14136-0e63-4501-099b-08de3d93a17a/1766551323918",
+                            "R18": true,
+                            "キャプション": null,
+                            "投稿日時": null,
+                            "サービスId": 0,
+                            "imageCode": 4,
+                            "UpdatedAt": 1766551323918
+                        },
+                        "IsNew": true,
+                        "IsOnlineBooksRegistered": false,
+                        "IsPixivRegistered": false,
+                        "PixivUrl": "",
+                        "IsTwitterRegistered": true,
+                        "TwitterUrl": "https://twitter.com/Qumata727",
+                        "IsNiconicoRegistered": false,
+                        "NiconicoUrl": "",
+                        "IsClipstudioRegistered": false,
+                        "ClipstudioUrl": "",
+                        "HasKokutiImage": false,
+                        "HasHanpuImage": true,
+                        "WebSite": "",
+                        "CanCashless": false,
+                        "CashlessTypes": "",
+                        "Description": ""
+                    },
+                    {
+                        "Id": 22022283,
+                        "CircleId": 10217083,
+                        "Name": "桃京武戯夜",
+                        "Author": "タカ",
+                        "IsReject": false,
+                        "Hall": "東",
+                        "Day": "水",
+                        "Block": "ア",
+                        "Space": "27a",
+                        "HaichiStr": "水曜日 東ア27a",
+                        "Is2SP": false,
+                        "IsMain": true,
+                        "Loc": 33,
+                        "Favorite": {
+                            "Color": 8,
+                            "Memo": "2000　comの委託"
+                        },
+                        "Genre": "アイドルマスター",
+                        "CircleCutUrls": [
+                            "/Spa/CachedImage/22022283/1/68e0c36c-9b88-455e-ad97-5d10f1a699a9/3967236130831"
+                        ],
+                        "WebCircleCutUrls": [
+                            "/Spa/CachedImage/22022283/2/eb54a2cc-2eb0-4360-acd7-1b278471f6c0/3967241402284"
+                        ],
+                        "MovieCutUrls": [
+                            null
+                        ],
+                        "Image1": null,
+                        "Image2": null,
+                        "BookImage": null,
+                        "IsNew": true,
+                        "IsOnlineBooksRegistered": true,
+                        "IsPixivRegistered": true,
+                        "PixivUrl": "https://www.pixiv.net/member.php?id=9122",
+                        "IsTwitterRegistered": true,
+                        "TwitterUrl": "https://twitter.com/takapiyo",
+                        "IsNiconicoRegistered": false,
+                        "NiconicoUrl": "",
+                        "IsClipstudioRegistered": false,
+                        "ClipstudioUrl": "",
+                        "HasKokutiImage": false,
+                        "HasHanpuImage": false,
+                        "WebSite": "",
+                        "CanCashless": false,
+                        "CashlessTypes": "",
+                        "Description": "新刊５点セットの予定です！"
+                    },
+                    {
+                        "Id": 22002974,
+                        "CircleId": 10128964,
+                        "Name": "LAMINARIA",
+                        "Author": "しおこんぶ",
+                        "IsReject": false,
+                        "Hall": "東",
+                        "Day": "水",
+                        "Block": "ア",
+                        "Space": "53a",
+                        "HaichiStr": "水曜日 東ア53a",
+                        "Is2SP": true,
+                        "IsMain": true,
+                        "Loc": 13,
+                        "Favorite": {
+                            "Color": 1,
+                            "Memo": ""
+                        },
+                        "Genre": "男性向",
+                        "CircleCutUrls": [
+                            "/Spa/CachedImage/22002974/1/32b2fbe5-f945-4eba-9c7a-65a387c01cc1/3967238525975"
+                        ],
+                        "WebCircleCutUrls": [
+                            "/Spa/CachedImage/22002974/2/3b08ec14-dd3f-4078-896e-39815b729bff/3967240088224"],
+                            "MovieCutUrls": [
+                                null
+                            ],
+                            "Image1": null,
+                            "Image2": null,
+                            "BookImage": null,
+                            "IsNew": false,
+                            "IsOnlineBooksRegistered": true,
+                            "IsPixivRegistered": true,
+                            "PixivUrl": "https://www.pixiv.net/member.php?id=920720",
+                            "IsTwitterRegistered": true,
+                            "TwitterUrl": "https://twitter.com/siokonbu_lam",
+                            "IsNiconicoRegistered": false,
+                            "NiconicoUrl": "",
+                            "IsClipstudioRegistered": false,
+                            "ClipstudioUrl": "",
+                            "HasKokutiImage": false,
+                            "HasHanpuImage": false,
+                            "WebSite": "http://siokonbu.com/",
+                            "CanCashless": false,
+                            "CashlessTypes": "",
+                            "Description": ""
+                        },
+                        {
+                            "Id": 22015000,
+                            "CircleId": 10004727,
+                            "Name": "A極振り",
+                            "Author": "Sian",
+                            "IsReject": false,
+                            "Hall": "東",
+                            "Day": "水",
+                            "Block": "ア",
+                            "Space": "57a",
+                            "HaichiStr": "水曜日 東ア57a",
+                            "Is2SP": false,
+                            "IsMain": true,
+                            "Loc": 21,
+                            "Favorite": {
+                                "Color": 1,
+                                "Memo": "委託有り"
+                            },
+                            "Genre": "男性向",
+                            "CircleCutUrls": [
+                                "/Spa/CachedImage/22015000/1/ecaa654a-1eae-4091-b7b7-dfaa378cd710/3967238091241"
+                            ],
+                            "WebCircleCutUrls": [
+                                "/Spa/CachedImage/22015000/2/28fb1d4b-cf0f-49d3-bcbd-e4009773d6d9/3967239602655"
+                            ],
+                            "MovieCutUrls": [
+                                null
+                            ],
+                            "Image1": null,
+                            "Image2": null,
+                            "BookImage": null,
+                            "IsNew": false,
+                            "IsOnlineBooksRegistered": true,
+                            "IsPixivRegistered": false,
+                            "PixivUrl": "",
+                            "IsTwitterRegistered": true,
+                            "TwitterUrl": "https://twitter.com/sian_sasaland",
+                            "IsNiconicoRegistered": false,
+                            "NiconicoUrl": "",
+                            "IsClipstudioRegistered": false,
+                            "ClipstudioUrl": "",
+                            "HasKokutiImage": false,
+                            "HasHanpuImage": false,
+                            "WebSite": "",
+                            "CanCashless": false,
+                            "CashlessTypes": "",
+                            "Description": "無事に新刊が出せるといいです"
+                        },
+                        {
+                            "Id": 22010080,
+                            "CircleId": 10338486,
+                            "Name": "ぶーち",
+                            "Author": "ぶーち",
+                            "IsReject": false,
+                            "Hall": "東",
+                            "Day": "水",
+                            "Block": "ア",
+                            "Space": "57b",
+                            "HaichiStr": "水曜日 東ア57b",
+                            "Is2SP": false,
+                            "IsMain": true,
+                            "Loc": 22,
+                            "Favorite": {
+                                "Color": 1,
+                                "Memo": ""
+                            },
+                            "Genre": "男性向",
+                            "CircleCutUrls": [
+                                "/Spa/CachedImage/22010080/1/60f96f36-3ef2-456b-a826-0fec311daa99/3967235602794"
+                            ],
+                            "WebCircleCutUrls": [
+                                "/Spa/CachedImage/22010080/2/4bb75b7f-7a93-45f0-9ef4-a6e19386b0a8/3967241071617"
+                            ],
+                            "MovieCutUrls": [null
+                        ],
+                        "Image1": null,
+                        "Image2": null,
+                        "BookImage": null,
+                        "IsNew": false,
+                        "IsOnlineBooksRegistered": true,
+                        "IsPixivRegistered": true,
+                        "PixivUrl": "https://www.pixiv.net/member.php?id=760251",
+                        "IsTwitterRegistered": true,
+                        "TwitterUrl": "https://twitter.com/boochkun",
+                        "IsNiconicoRegistered": false,
+                        "NiconicoUrl": "",
+                        "IsClipstudioRegistered": false,
+                        "ClipstudioUrl": "",
+                        "HasKokutiImage": false,
+                        "HasHanpuImage": false,
+                        "WebSite": "https://twitter.com/boochkun",
+                        "CanCashless": false,
+                        "CashlessTypes": "",
+                        "Description": "新刊はオリジナルの成人男性向け漫画とおまけ折本を発行予定です。\n既刊は学マス本、オリジナルドスケベ風紀委員長本などを頒布予定です。"
+                    },
+                    {
+                        "Id": 22018744,
+                        "CircleId": 10281153,
+                        "Name": "からももたると",
+                        "Author": "きんだつ",
+                        "IsReject": false,
+                        "Hall": "東",
+                        "Day": "水",
+                        "Block": "ア",
+                        "Space": "58a",
+                        "HaichiStr": "水曜日 東ア58a",
+                        "Is2SP": false,
+                        "IsMain": true,
+                        "Loc": 23,
+                        "Favorite": {
+                            "Color": 1,
+                            "Memo": ""
+                        },
+                        "Genre": "男性向",
+                        "CircleCutUrls": [
+                            "/Spa/CachedImage/22018744/1/3af50ccc-f69a-42aa-a446-2b753b77ca94/3967236202964"
+                        ],
+                        "WebCircleCutUrls": [
+                            "/Spa/CachedImage/22018744/2/9dc2038a-51d5-4444-9ee7-8bd8a398378c/3967238959035"
+                        ],
+                        "MovieCutUrls": [
+                            null
+                        ],
+                        "Image1": null,
+                        "Image2": null,
+                        "BookImage": null,
+                        "IsNew": false,
+                        "IsOnlineBooksRegistered": true,
+                        "IsPixivRegistered": true,
+                        "PixivUrl": "https://www.pixiv.net/member.php?id=274961",
+                        "IsTwitterRegistered": true,
+                        "TwitterUrl": "https://twitter.com/qaltted",
+                        "IsNiconicoRegistered": false,
+                        "NiconicoUrl": "",
+                        "IsClipstudioRegistered": false,
+                        "ClipstudioUrl": "",
+                        "HasKokutiImage": false,
+                        "HasHanpuImage": false,
+                        "WebSite": "https://twitter.com/qaltted",
+                        "CanCashless": false,
+                        "CashlessTypes": "",
+                        "Description": "首絞め好きの地雷系少女　オリジナルR18　モノクロ漫画"
+                    },
+                    {
+                        "Id": 22008007,
+                        "CircleId": 10318949,
+                        "Name": "陸の孤島亭",
+                        "Author": "しゃよー",
+                        "IsReject": false,
+                        "Hall": "東",
+                        "Day": "水",
+                        "Block": "ア",
+                        "Space": "62a",
+                        "HaichiStr": "水曜日 東ア62a",
+                        "Is2SP": true,
+                        "IsMain": true,
+                        "Loc": 31,
+                        "Favorite": {
+                            "Color": 1,
+                            "Memo": ""
+                        },
+                        "Genre": "男性向",
+                        "CircleCutUrls": [
+                            "/Spa/CachedImage/22008007/1/1682b2d3-3cf1-4b5a-9eaf-be95fecb9d18/3967236189384"
+                        ],
+                        "WebCircleCutUrls": [
+                            "/Spa/CachedImage/22008007/2/f8771cb9-155b-40d5-9bd4-5da202319b37/3967239402549"
+                        ],
+                        "MovieCutUrls": [
+                            null
+                        ],
+                        "Image1": null,
+                        "Image2": null,
+                        "BookImage": null,
+                        "IsNew": false,
+                        "IsOnlineBooksRegistered": true,
+                        "IsPixivRegistered": true,
+                        "PixivUrl": "https://www.pixiv.net/member.php?id=16659035",
+                        "IsTwitterRegistered": true,
+                        "TwitterUrl": "https://twitter.com/shayo510",
+                        "IsNiconicoRegistered": false,
+                        "NiconicoUrl": "",
+                        "IsClipstudioRegistered": false,
+                        "ClipstudioUrl": "",
+                        "HasKokutiImage": false,
+                        "HasHanpuImage": false,
+                        "WebSite": "http://www.pixiv.net/member.php?id=16659035",
+                        "CanCashless": false,
+                        "CashlessTypes": "",
+                        "Description": "同人は癒し。"
+                    },
+                    {
+                        "Id": 22029272,
+                        "CircleId": 10278864,
+                        "Name": "セカンドカラー",
+                        "Author": "たいぷはてな",
+                        "IsReject": false,
+                        "Hall": "東",
+                        "Day": "水",
+                        "Block": "ア",
+                        "Space": "68a",
+                        "HaichiStr": "水曜日 東ア68a",
+                        "Is2SP": true,
+                        "IsMain": true,
+                        "Loc": 7,
+                        "Favorite": {
+                            "Color": 7,
+                            "Memo": ""
+                        },
+                        "Genre": "男性向",
+                        "CircleCutUrls": [
+                            "/Spa/CachedImage/22029272/1/60748413-9280-42b9-ab2d-fe5bf8da0b32/3967237374912"
+                        ],
+                        "WebCircleCutUrls": [
+                            "/Spa/CachedImage/22029272/2/5d61f95b-93d3-4f46-b7af-cd0cc251040a/3967241618627"
+                        ],
+                        "MovieCutUrls": [
+                            null
+                        ],
+                        "Image1": null,
+                        "Image2": null,
+                        "BookImage": null,
+                        "IsNew": true,
+                        "IsOnlineBooksRegistered": true,
+                        "IsPixivRegistered": true,
+                        "PixivUrl": "https://www.pixiv.net/member.php?id=71370",
+                        "IsTwitterRegistered": false,
+                        "TwitterUrl": "",
+                        "IsNiconicoRegistered": false,
+                        "NiconicoUrl": "",
+                        "IsClipstudioRegistered": false,
+                        "ClipstudioUrl": "",
+                        "HasKokutiImage": false,
+                        "HasHanpuImage": false,
+                        "WebSite": "",
+                        "CanCashless": false,
+                        "CashlessTypes": "",
+                        "Description": "成年漫画(男性向け、創作、種付けおじさん×ロリ)"
+                    },
+                    {
+                        "Id": 22016701,
+                        "CircleId": 10400774,
+                        "Name": "駄菓子屋",
+                        "Author": "きしわがし",
+                        "IsReject": false,
+                        "Hall": "東",
+                        "Day": "水",
+                        "Block": "ア",
+                        "Space": "70a",
+                        "HaichiStr": "水曜日 東ア70a",
+                        "Is2SP": false,
+                        "IsMain": true,
+                        "Loc": 11,
+                        "Favorite": {
+                            "Color": 7,
+                            "Memo": "コピ本"
+                        },
+                        "Genre": "男性向",
+                        "CircleCutUrls": [
+                            "/Spa/CachedImage/22016701/1/7b452399-e34c-417e-9fda-0daefdf2ea55/3967238450233"
+                        ],
+                        "WebCircleCutUrls": [
+                            "/Spa/CachedImage/22016701/2/cd67aabf-7f44-4a04-9970-2b9f59040393/3967240599850"
+                        ],
+                        "MovieCutUrls": [
+                            null
+                        ],
+                        "Image1": null,
+                        "Image2": null,
+                        "BookImage": null,
+                        "IsNew": false,
+                        "IsOnlineBooksRegistered": true,
+                        "IsPixivRegistered": true,
+                        "PixivUrl": "https://www.pixiv.net/member.php?id=4850497",
+                        "IsTwitterRegistered": true,
+                        "TwitterUrl": "https://twitter.com/wagasi0120",
+                        "IsNiconicoRegistered": false,
+                        "NiconicoUrl": "",
+                        "IsClipstudioRegistered": false,
+                        "ClipstudioUrl": "",
+                        "HasKokutiImage": false,
+                        "HasHanpuImage": false,
+                        "WebSite": "",
+                        "CanCashless": false,
+                        "CashlessTypes": "",
+                        "Description": ""
+                    },
+                    {
+                        "Id": 22014643,
+                        "CircleId": 10000355,
+                        "Name": "乙女気分",
+                        "Author": "三色網戸。",
+                        "IsReject": false,
+                        "Hall": "東",
+                        "Day": "水",
+                        "Block": "ア",
+                        "Space": "74b",
+                        "HaichiStr": "水曜日 東ア74b",
+                        "Is2SP": true,
+                        "IsMain": true,
+                        "Loc": 20,
+                        "Favorite": {
+                            "Color": 1,
+                            "Memo": ""
+                        },
+                        "Genre": "男性向",
+                        "CircleCutUrls": [
+                            "/Spa/CachedImage/22014643/1/f3c7b136-67c8-40fa-b9c6-60a10f512974/3967237500448"
+                        ],
+                        "WebCircleCutUrls": [
+                            "/Spa/CachedImage/22014643/2/f3732e18-47f4-45c1-b94d-82da93b092e8/3967238948488"
+                        ],
+                        "MovieCutUrls": [
+                            null
+                        ],
+                        "Image1": null,
+                        "Image2": null,
+                        "BookImage": null,
+                        "IsNew": true,
+                        "IsOnlineBooksRegistered": true,
+                        "IsPixivRegistered": true,
+                        "PixivUrl": "https://www.pixiv.net/member.php?id=226272",
+                        "IsTwitterRegistered": true,
+                        "TwitterUrl": "https://twitter.com/amidosansyoku",
+                        "IsNiconicoRegistered": false,
+                        "NiconicoUrl": "",
+                        "IsClipstudioRegistered": false,
+                        "ClipstudioUrl": "",
+                        "HasKokutiImage": false,
+                        "HasHanpuImage": false,
+                        "WebSite": "http://otomekibun.blog71.fc2.com/",
+                        "CanCashless": false,
+                        "CashlessTypes": "",
+                        "Description": "主に創作18禁で水着や制服をよく描きます。シリーズでは総集編4巻と最新20巻が出ています。"
+                    }
+                ]
+            }</script>
+        <script>
+            ComiketWebCatalog.Circle = ComiketWebCatalog.Circle || {};
+            ComiketWebCatalog.Circle.Cut = {
+                day: 'Day2'
+            };
+
+            window.addEventListener('DOMContentLoaded', function() {
+                (new ComiketWebCatalog.Circle.Cut2({
+                    isFavorite: true,
+                    activityCycle: 0,
+                    activityIsSend: true,
+
+                    site: 'webcatalog',
+                    action: 'Favorites',
+                    eventId: 220,
+                    portalUrl: 'https://portal.circle.ms/',
+                    myportalUrl: 'https://myportal.circle.ms/',
+                    favoriteSettingEachDel: false,
+                    Goldmode: false,
+                    userid: 'fbdcb822-393d-411a-b06d-85ea2d3b43cb',
+                    isSilver: true,
+                    kakinUrl: 'https://docs.circle.ms/feature/error/index.html'
+                })).initialize();
+            });
+        </script>
+        <script src="https://adv.circle.ms/Content/adcount.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                if (typeof adlogging == "function")
+                    adlogging('https://adv.circle.ms', 'webcatalog_public', '11287061');
+            });
+        </script>
+    </body>
+</html>
