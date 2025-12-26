@@ -57,19 +57,36 @@
     /**
      * サークルの詳細行に関連する全ての行を取得
      * 1つのサークルは複数のtr要素で構成されているため、それらをグループ化
+     * 
+     * /User/Favoritesページ: infotable-sep、webcatalog-circle-list-detail、tr、tr (4行)
+     * /Circle/Listページ: infotable-sep、webcatalog-circle-list-detail、tr、tr、tr (5行)
      */
     function groupRows(detailTr) {
       const prev = detailTr.previousElementSibling;
       const r1 = detailTr.nextElementSibling;
       const r2 = r1 && r1.nextElementSibling;
+      const r3 = r2 && r2.nextElementSibling;
       const rows = [];
       
+      // 前の行（infotable-sep）を追加
       if (prev && prev.classList.contains('infotable-sep')) {
         rows.push(prev);
       }
+      
+      // メイン行を追加
       rows.push(detailTr);
-      if (r1) rows.push(r1);
-      if (r2) rows.push(r2);
+      
+      // 次の行を追加（ページタイプに応じて行数を変更）
+      if (isCircleListPage) {
+        // /Circle/Listページ: 次の3行を追加
+        if (r1) rows.push(r1);
+        if (r2) rows.push(r2);
+        if (r3) rows.push(r3);
+      } else {
+        // /User/Favoritesページ: 次の2行を追加
+        if (r1) rows.push(r1);
+        if (r2) rows.push(r2);
+      }
       
       return rows;
     }
