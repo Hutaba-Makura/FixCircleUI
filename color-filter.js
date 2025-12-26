@@ -176,8 +176,9 @@
   
       // 全選択ボタン
       const selectAllBtn = document.createElement('button');
+      selectAllBtn.className = 'c-btn c-btn--orange';
       selectAllBtn.textContent = '全て選択';
-      selectAllBtn.style.cssText = 'padding: 4px 8px; margin-right: 10px; cursor: pointer; align-items: top;';
+      selectAllBtn.style.cssText = 'padding: 10px; cursor: pointer; align-items: top;';
       selectAllBtn.onclick = () => {
         COLOR_DEFINITIONS.forEach(c => {
           ALLOWLIST.add(c.id);
@@ -190,8 +191,9 @@
   
       // 全解除ボタン
       const deselectAllBtn = document.createElement('button');
+      deselectAllBtn.className = 'c-btn c-btn--orange';
       deselectAllBtn.textContent = '全て解除';
-      deselectAllBtn.style.cssText = 'padding: 4px 8px; cursor: pointer; align-items: top;';
+      deselectAllBtn.style.cssText = 'padding: 10px; margin-right: 10px; cursor: pointer; align-items: top;';
       deselectAllBtn.onclick = () => {
         ALLOWLIST.clear();
         COLOR_DEFINITIONS.forEach(c => {
