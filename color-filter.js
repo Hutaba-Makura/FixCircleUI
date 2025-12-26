@@ -106,7 +106,7 @@
       } else if(isCircleListPage) {
         // /Circle/Listページ: circlecut-overlay-favorite favorite-backgroundcolor-{数字}から取得
         // または favorite-backgroundcolor- のみ（色が無い場合）
-        const element = detailTr.querySelector('.circlecut-overlay-favorite, [class*="favorite-backgroundcolor-"]');
+        const element = detailTr.querySelector('.circlecut-overlay-favorite[class*="favorite-backgroundcolor-"]');
         if (!element) return null;
         
         // favorite-backgroundcolor-{数字}のパターンを探す
@@ -114,13 +114,13 @@
         if (match) {
           return match.split('-').pop();
         }
-        
+
         // favorite-backgroundcolor- のみの場合は色が無い（nullを返す）
         const hasEmptyColor = Array.from(element.classList).some(c => c === 'favorite-backgroundcolor-');
         if (hasEmptyColor) {
-          return null;
+          return '10';
         }
-        
+  
         return null;
       }
       return null;
