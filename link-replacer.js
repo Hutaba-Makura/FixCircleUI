@@ -72,6 +72,7 @@
      * support-list内のアイコンにクリックイベントを設定
      */
     function replaceIconLinks() {
+      console.log('replaceIconLinks');
       const model = parseModel();
       if (!model) return;
   
@@ -98,10 +99,25 @@
   
           // URLが存在する場合のみ処理
           if (url && url.trim() !== '') {
-            const parent = icon.parentElement;
-            
             // 既に処理済みの場合はスキップ（data-link-replaced属性で判定）
             if (icon.hasAttribute('data-link-replaced')) return;
+            
+            const parent = icon.parentElement;
+            
+            // Knockout.jsのイベントバインディングを無効化するため、img要素をクローンして置き換え
+            const newIcon = icon.cloneNode(true);
+            
+            // data-bind属性からclickイベントを削除
+            const dataBind = newIcon.getAttribute('data-bind');
+            if (dataBind) {
+              // clickイベントを削除したdata-bindを作成
+              let newDataBind = dataBind.replace(/click\s*:\s*[^,}]+/g, '').replace(/,\s*,/g, ',').replace(/^,\s*|,\s*$/g, '');
+              if (newDataBind.trim() === '') {
+                newIcon.removeAttribute('data-bind');
+              } else {
+                newIcon.setAttribute('data-bind', newDataBind);
+              }
+            }
             
             // アイコンをaタグで囲む
             if (parent.tagName !== 'A') {
@@ -111,37 +127,42 @@
               link.rel = 'noopener noreferrer';
               link.style.cssText = 'display: inline-block; cursor: pointer; text-decoration: none;';
               
-              // アイコンをリンクで囲む
-              parent.insertBefore(link, icon);
-              link.appendChild(icon);
+              // 新しいアイコンをリンクに追加
+              link.appendChild(newIcon);
               
-              // クリックイベントを追加（Knockout.jsのイベントを上書き）
+              // 元のアイコンを新しいリンクで置き換え
+              parent.replaceChild(link, icon);
+              
+              // クリックイベントを追加
               link.addEventListener('click', (e) => {
                 e.stopPropagation();
                 e.preventDefault();
-                e.stopImmediatePropagation(); // 他のイベントリスナーを阻止
+                e.stopImmediatePropagation();
                 window.open(url, '_blank', 'noopener,noreferrer');
                 return false;
-              }, true); // capture phaseで実行してKnockout.jsより先に処理
+              }, true);
               
               // 処理済みフラグを設定
-              icon.setAttribute('data-link-replaced', 'true');
+              newIcon.setAttribute('data-link-replaced', 'true');
             } else {
-              // 既にaタグの場合はhrefを更新
+              // 既にaタグの場合はhrefを更新し、アイコンを置き換え
               parent.href = url;
               parent.target = '_blank';
               parent.rel = 'noopener noreferrer';
               
-              // クリックイベントを追加（Knockout.jsのイベントを上書き）
+              // 元のアイコンを新しいアイコンで置き換え
+              parent.replaceChild(newIcon, icon);
+              
+              // クリックイベントを追加
               parent.addEventListener('click', (e) => {
                 e.stopPropagation();
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 window.open(url, '_blank', 'noopener,noreferrer');
                 return false;
-              }, true); // capture phaseで実行してKnockout.jsより先に処理
+              }, true);
               
-              icon.setAttribute('data-link-replaced', 'true');
+              newIcon.setAttribute('data-link-replaced', 'true');
             }
           }
         });
