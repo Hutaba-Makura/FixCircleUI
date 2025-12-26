@@ -28,7 +28,8 @@
         { id: '6', name: 'パープル', color: '#9C529C' },
         { id: '7', name: 'ブルー', color: '#0000FF' },
         { id: '8', name: 'ライトグリーン', color: '#00FF00' },
-        { id: '9', name: 'レッド', color: '#FF0000' }
+        { id: '9', name: 'レッド', color: '#FF0000' },
+        { id: '10', name: 'ホワイト', color: '#FFFFFF' },
     ];
   
     // 表示したい色ID（Setで管理）
@@ -95,11 +96,20 @@
      * DOMから色情報を取得（フォールバック用）
      */
     function detectColorFromRow(detailTr) {
-      const td = detailTr.querySelector('td.favorite-color, td[class*="favorite-color-"]');
-      if (!td) return null;
-      
-      const match = Array.from(td.classList).find(c => /^favorite-color-\d+$/.test(c));
-      return match ? match.split('-').pop() : null;
+      if(isFavoritesPage) {
+        const td = detailTr.querySelector('td.favorite-color, td[class*="favorite-color-"]');
+        if (!td) return null;
+        
+        const match = Array.from(td.classList).find(c => /^favorite-color-\d+$/.test(c));
+        return match ? match.split('-').pop() : null;
+      } else if(isCircleListPage) {
+        const td = detailTr.querySelector('td.favorite-color, td[class*="favorite-color-"]');
+        if (!td) return null;
+        
+        const match = Array.from(td.classList).find(c => /^favorite-color-\d+$/.test(c));
+        return match ? match.split('-').pop() : null;
+      }
+      return null;
     }
   
     // ============================================================================
@@ -113,7 +123,6 @@
       const model = parseModel();
       const circles = model && Array.isArray(model.Circles) ? model.Circles : [];
       const detailRows = Array.from(document.querySelectorAll('tr.webcatalog-circle-list-detail'));
-      const allowAll = ALLOWLIST.size === 0 || ALLOWLIST.size === COLOR_DEFINITIONS.length;
       
       detailRows.forEach((tr, i) => {
         let color = null;
@@ -125,11 +134,13 @@
           // DOMから色を取得（フォールバック）
           color = detectColorFromRow(tr);
         }
+
+        // TODO: 削除
+        console.log(circles[i]);
         
         const rows = groupRows(tr);
-        // 色がnull/undefinedの場合（色が指定されていないサークル）は、allowAllがtrueの時のみ表示
-        // それ以外の場合は、ALLOWLISTに含まれている色のみ表示
-        const show = allowAll || (color && ALLOWLIST.has(color));
+        // 色がnull/undefinedの場合（色が指定されていないサークル）は、ホワイトがチェックされている場合のみ表示
+        const show = (color && ALLOWLIST.has(color)) || ((color === '10' || color === null) && ALLOWLIST.has('10'));
         rows.forEach(r => {
           r.style.display = show ? '' : 'none';
         });
