@@ -1,0 +1,382 @@
+﻿
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="index">
+    <meta name="description" content="コミックマーケットのカタログをWebで閲覧できるサービス。Circle.msが運営。">
+    <meta name="keywords" content="Webカタログ,コミケ,コミックマーケット,カタログ,コミケカタログ">
+    <title>ログイン | Comike Web Catalog</title>
+    <link href="/assets/css/bundle-v1.1?v=K3O5s1-Gpw_YMCWRaXuB2XNryP_8hl4b2mur929WcEg1" rel="stylesheet"/>
+
+    <link href="/assets/css/bundle-layout?v=pGn-OylVeQzJBCc6mtVVnGr9PQsf3ZN1astWa2IoWII1" rel="stylesheet"/>
+
+    <script src="/common/js/lib/bundle?v=4lGEez3eG-qWL7PgY2cmWatRUipXq35F0ClCQUeLukY1"></script>
+
+    
+
+    
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body class="page-login">
+    <div class="login_header" style="padding-bottom: 200px;">
+        <div class="login_h_contents">
+            <div class="login_h_logo">
+                <img src="/assets/images/common/img_top_brand.png" alt="コミケWebカタログ | Comike Web Catalog" title="コミケWebカタログ | Comike Web Catalog" style="width: 427px; height: 162px;" />
+            </div>
+
+            <!--ログインフォーム-->
+            <div class="login_form_list">
+                <h2 class="login_form_h">Circle.msのアカウントでログイン</h2>
+                <div class="login_error"></div>
+                <form method="POST" action="https://auth2.circle.ms/" id="loginform">
+                    <input type="hidden" name="ReturnUrl" value="https://webcatalog-free.circle.ms/Account/Login" />
+                    <input id="state" name="state" type="hidden" value="/Circle/List?keyword=%E3%81%8B%E3%82%8F%E3%81%84%E3%81%9D%E3%81%86" />
+                    <ul>
+                        <li>
+                            メールアドレス<br>
+                            <input data-val="true" data-val-maxlength="255文字以内で入力して下さい" data-val-maxlength-max="255" data-val-minlength="4文字以上で入力して下さい" data-val-minlength-min="4" data-val-required="The メールアドレス field is required." id="Username" name="Username" placeholder="メールアドレスを入力してください" type="text" value="" />
+                            <div style="display: block;">
+                                <span class="field-validation-valid" data-valmsg-for="Username" data-valmsg-replace="true"></span>
+                            </div>
+                        </li>
+                        <li>
+                            パスワード<br>
+                            <input data-val="true" data-val-required="The パスワード field is required." id="Password" name="Password" placeholder="パスワードを入力してください" type="password" /><br>
+                            <div style="display: block;">
+                                <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                            </div>
+                        </li>
+                    </ul><!--/ログインフォーム-->
+                    <div style="text-align: center; margin-top: 5px;">
+                        <span>※パスワードを忘れた場合は<a href="https://auth2.circle.ms/Account/RecoveryPassword">こちら</a>へ</span>
+                    </div>
+                    <div class="login_btn">
+                        <input class="s-btn--login" type="submit" value="ログイン" id="loginbtn">
+                    </div>
+                    <div class="newmember_btn">
+                        <a class="s-btn--register" href="/Account/RegisterPre?RedirectUrl=https%3A%2F%2Fwebcatalog-free.circle.ms%2FCircle%2FList%3Fkeyword%3D%E3%81%8B%E3%82%8F%E3%81%84%E3%81%9D%E3%81%86">新規会員登録</a>
+                    </div>
+                </form>
+                <section class="s-login">
+                        <h2 class="section-head2">SNSアカウントでログイン</h2>
+    <div class="s-login">
+            <div class="s-login_btn">
+                <a href="https://auth2.circle.ms/Account/ExternalLogIn?provider=Twitter&amp;returnUrl=https%3A%2F%2Fwebcatalog-free.circle.ms%2FCircle%2FList%3Fkeyword%3D%E3%81%8B%E3%82%8F%E3%81%84%E3%81%9D%E3%81%86" class="twitter">
+                    <img src="/assets/images/login/twitter.png" alt="twitter" title="twitter">
+                </a>
+            </div>
+            <div class="s-login_btn">
+                <a href="https://auth2.circle.ms/Account/ExternalLogIn?provider=pixiv&amp;returnUrl=https%3A%2F%2Fwebcatalog-free.circle.ms%2FCircle%2FList%3Fkeyword%3D%E3%81%8B%E3%82%8F%E3%81%84%E3%81%9D%E3%81%86" class="pixiv">
+                    <img src="/assets/images/login/pixiv.png" alt="pixiv" title="pixiv">
+                </a>
+            </div>
+            <div class="s-login_btn">
+                <a href="https://auth2.circle.ms/Account/ExternalLogIn?provider=https://accounts.google.com&amp;returnUrl=https%3A%2F%2Fwebcatalog-free.circle.ms%2FCircle%2FList%3Fkeyword%3D%E3%81%8B%E3%82%8F%E3%81%84%E3%81%9D%E3%81%86" class="google">
+                    <img src="/assets/images/login/google.png" alt="google" title="google">
+                </a>
+            </div>
+            <div class="s-login_btn">
+                <a href="https://auth2.circle.ms/Account/ExternalLogIn?provider=Yahoo&amp;returnUrl=https%3A%2F%2Fwebcatalog-free.circle.ms%2FCircle%2FList%3Fkeyword%3D%E3%81%8B%E3%82%8F%E3%81%84%E3%81%9D%E3%81%86" class="yahoo">
+                    <img src="/assets/images/login/yahoo.png" alt="yahoo" title="yahoo">
+                </a>
+            </div>
+            <div class="s-login_btn">
+                <a href="https://auth2.circle.ms/Account/ExternalLogIn?provider=LINE&amp;returnUrl=https%3A%2F%2Fwebcatalog-free.circle.ms%2FCircle%2FList%3Fkeyword%3D%E3%81%8B%E3%82%8F%E3%81%84%E3%81%9D%E3%81%86" class="line">
+                    <img src="/assets/images/login/line.png" alt="line" title="line">
+                </a>
+            </div>
+    </div>
+
+                </section>
+                </div>
+        </div>
+
+        <div><!--LoginBeforeTop_Head.parts--></div>
+
+        <!--LoginBeforeTop_Center.parts-->
+<div class="login_content">
+  <ul>
+    <li>
+      <a href="https://docs.circle.ms/webcatalog/index.html" target="_blank">
+        <img src="https://webcatalogj07.blob.core.windows.net/contents-parts/images/guide.png" alt="コミケWebカタログ総合ガイド">
+      </a>
+    </li>
+    <li>
+      <a href="https://docs.circle.ms/webcatalog/ctn/credit/001.html" target="_blank">
+        <img src="https://webcatalogj07.blob.core.windows.net/contents-parts/images/kakin_info.png" alt="有料課金サービスのご案内">
+      </a>
+    </li>
+  </ul>
+</div>
+    </div>
+
+        <ul class="footbanner_list">
+                    <li>
+                        <a href="https://www.comiket.co.jp/" data-ad="127" target="_blank">
+                            <img src="https://webcatalogj07.blob.core.windows.net/bunner/fb1.gif" title="コミックマーケット公式サイト" alt="コミックマーケット公式サイト" data-ad="127" data-type="advert" data-link="https://www.comiket.co.jp/" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.meiji.ac.jp/manga/yonezawa_lib/" data-ad="129" target="_blank">
+                            <img src="https://webcatalogj07.blob.core.windows.net/bunner/fb3.gif" title="米沢嘉博記念図書館" alt="米沢嘉博記念図書館" data-ad="129" data-type="advert" data-link="https://www.meiji.ac.jp/manga/yonezawa_lib/" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://portal.circle.ms/" data-ad="130" target="_blank">
+                            <img src="https://webcatalogj07.blob.core.windows.net/bunner/fb5.png" title="有限会社サークルドットエムエス" alt="有限会社サークルドットエムエス" data-ad="130" data-type="advert" data-link="https://portal.circle.ms/" />
+                        </a>
+                    </li>
+                <li><a href="https://webcatalog-archives.circle.ms/" target="_blank"><img src="/assets/images/banner/fb6.png" alt="コミケWebカタログアーカイブス" /></a></li>
+                <li><a href="https://docs.circle.ms/won/" target="_blank"><img src="/assets/images/banner/fb4.png" alt="ワールドオタクネット" /></a></li>
+        </ul>
+        <footer>
+    <div class="comike_footer">
+
+        <div class="comike_footer_left">
+            <a href="/"><img src="/assets/images/common/img_top_brand.png" alt="コミケウェブカタログ｜Comike Web Catalog" title="コミケウェブカタログ｜Comike Web Catalog"></a>
+            <a href="/Home/NoPc"><span class="mobile_switching">モバイル版に切り替え</span></a>
+        </div><!--comike_footer_right-->
+
+        <div class="comike_footer_right">
+                <!--Powered By-->
+                <p>【Powered By】</p>
+                <ul class="m-footbanner">
+                        <li><a href="https://www.cosat.com/" data-ad="124" target="_blank"><img src="https://webcatalogj07.blob.core.windows.net/bunner/cosat_logo.gif" title="株式会社コサット" alt="株式会社コサット" data-ad="124" data-type="advert" data-link="https://www.cosat.com/"/></a></li>
+                        <li><a href="https://azure.microsoft.com/ja-jp/" data-ad="125" target="_blank"><img src="https://webcatalogj07.blob.core.windows.net/bunner/ms_bunner.png" title="日本マイクロソフト株式会社" alt="日本マイクロソフト株式会社" data-ad="125" data-type="advert" data-link="https://azure.microsoft.com/ja-jp/"/></a></li>
+                        <li><a href="https://www.pnop.co.jp/" data-ad="126" target="_blank"><img src="https://webcatalogj07.blob.core.windows.net/bunner/pnop_bunner.png" title="株式会社pnop" alt="株式会社pnop" data-ad="126" data-type="advert" data-link="https://www.pnop.co.jp/"/></a></li>
+                        <li><a href="https://ioea.info/" data-ad="438" target="_blank"><img src="https://webcatalogj07.blob.core.windows.net/bunner/circlems/banner_ioea_200x40.png" title="I.O.E.A" alt="I.O.E.A" data-ad="438" data-type="advert" data-link="https://ioea.info/"/></a></li>
+                </ul>
+                <p>The Powered By Windows Azure mark is a registered trademarks of Microsoft Corporation in the United States and other countries, and are used under license from Microsoft.</p>
+            <div class="footer_content">
+                <ul>
+                    <li><a href="https://www.comiket.co.jp/"><img src="/assets/images/common/comike_logo.png" alt="コミックマーケット公式サイト" title="コミックマーケット公式サイト"></a><a href="https://portal.circle.ms/"><img src="/assets/images/common/img_circlems.png" alt="Circle.ms" title="Circle.ms"></a></li>
+                </ul>
+
+                <ul>
+                    <li><span class="arrow">規約</span></li>
+                    <li><a class="open-dialog" href="https://docs.circle.ms/footer/agreement.html?keepThis=true&TB_iframe=true&height=500&width=800">利用規約</a></li>
+                    <li><a class="open-dialog" href="https://docs.circle.ms/footer/sctl01.html">特定商取引法</a></li>
+                </ul>
+
+                <ul>
+                    <li><span class="arrow">ご利用にあたって</span></li>
+                    <li><a class="open-dialog" href="https://docs.circle.ms/footer/privacypolicy.html?keepThis=true&TB_iframe=true&height=500&width=800">プライバシーポリシー</a></li>
+                    <li><a class="open-dialog" href="https://docs.circle.ms/footer/copyright.html?keepThis=true&TB_iframe=true&height=500&width=800">著作権について</a></li>
+                    <li><a href="https://www.comiket.co.jp/Trademark_J.html" target="_blank">登録商標に関して</a></li>
+                </ul>
+
+                <ul>
+                    <li><span class="arrow">お問い合わせ</span></li>
+                    <li><a href="https://portal.circle.ms/Account/Register1">新規会員登録</a></li>
+                    <li><a href="https://auth2.circle.ms/Account/WithDraw1">退会</a></li>
+                    <li><a href="https://docs.circle.ms/webcatalog/" target="_blank">ヘルプ(総合ガイド)</a></li>
+                    <li><a href="/Home/Inquiry">お問い合わせ/通報</a></li>
+                </ul>
+
+                <ul>
+                    <li><span class="arrow">有料会員について</span></li>
+                    <li><a href="https://docs.circle.ms/webcatalog/ctn/credit/002.html" target="_blank">課金プランについて</a></li>
+                    <li><a href="/Billing/Selectplan">有料会員登録</a></li>
+                    <li><a href="/Billing/Cancel1">有料会員解約</a></li>
+                </ul>
+
+            </div>
+        </div><!--comike_footer_right-->
+
+    </div>
+</footer>
+
+<!-- dialog -->
+<div id="kotak-dialog">
+	<h3 class="title">Dialog<a href="#" class="close">&times;</a></h3>
+	<div class="isi-dialog">
+		<div class="button-wrapper"><button class="close">Close</button></div>
+		<div id="iframeContainer"></div>
+	</div>
+</div>
+<div id="dialog-overlay"></div>
+<!-- /dialog -->
+
+        <!-- dialog -->
+        <div id="kotak-dialog">
+            <h3 class="title">Dialog<a href="#" class="close">&times;</a></h3>
+            <div class="isi-dialog">
+                <div id="iframeContainer"></div>
+                <div class="button-wrapper">
+                    <button class="close">Close</button>
+                </div>
+            </div>
+        </div>
+        <div id="dialog-overlay"></div>
+        <!-- /dialog -->
+        <script src="https://adv.circle.ms/Content/adcount.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                if (typeof adlogging == "function")
+                    adlogging('https://adv.circle.ms', 'webcatalog_public', '');
+
+                $('#loginform input').keypress(function (e) {
+                    if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+                        $("#loginform").submit();
+                    }
+                });
+                $('#loginbtn').keypress(function (e) {
+                    if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+                        $("#loginform").submit();
+                    }
+                    if ((e.which && e.which == 32) || (e.keyCode && e.keyCode == 32)) {
+                        $("#loginform").submit();
+                    }
+                });
+                // テキストのlightbox
+                $('.open-dialog').click(function () {
+                    $('#kotak-dialog').find('.title').html($(this).html());
+                    $('#kotak-dialog').show().find('#iframeContainer').html('<iframe src="' + this.href + '"></iframe>');
+                    $('#dialog-overlay').fadeTo(400, 0.8);
+                    return false;
+                });
+                $('#kotak-dialog .close').click(function () {
+                    $('#kotak-dialog').fadeOut('normal', function () {
+                        $('iframe', this).remove();
+                    });
+                    $('#dialog-overlay').hide();
+                    return false;
+                });
+
+                $('#Username').focus();
+            });
+        </script>
+
+    <style>
+        #cookieConsent {
+            position: fixed;
+            top: 5px;
+            background-color: #f0ffe0;
+            width: 90vw!important;
+            max-width: 450px;
+            padding: 1.3em 1.5em;
+            margin-left: 50%;
+            font-size: 0.7em;
+            transform: translateX(-50%);
+            border: 1px #3f9d25 solid;
+            text-align: center;
+            z-index: 100000;
+            font-weight: 300;
+            line-height: 1.3em;
+        }
+
+        #cookieConsent div a {
+            font-weight: 300;
+            color: #333;
+        }
+
+            #cookieConsent ul, #cookieConsent p {
+                margin-bottom: 1em;
+            }
+
+            #cookieConsent h3 {
+                font-size: 1.2em;
+                font-weight: bold;
+                margin-bottom: 15px
+            }
+
+            #cookieConsent button {
+                background: #f7ac00;
+                display: inline-block;
+                color: #ffffff;
+                text-align: center;
+                font-size: 100%;
+                padding: 0.3em 0.7em;
+                border: none;
+                border-radius: 3%;
+                -moz-border-radius: 3%;
+                -webkit-border-radius: 3z5;
+                cursor: pointer;
+                font-weight: 300;
+                margin-left: 2%;
+            }
+
+        .cookie_grayL {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.0)
+        }
+
+        .disp-none {
+            display: none;
+        }
+    </style>
+    <div class="cookie_grayL" style="display: none"></div>
+    <div id="cookieConsent" style="display: none">
+        <div data-content></div>
+        <a target="_blank" href="https://docs.circle.ms/footer/privacypolicy.html">プライバシーポリシーを見る</a><br />
+        <button type="button" data-accept>
+            <span>同意する</span>
+        </button>
+        <button type="button" data-accept-required>
+            <span>閉じる</span>
+        </button>
+        <button type="button" data-decline style="display: none">
+            <span>同意しない</span>
+        </button>
+    </div>
+    <script>
+        $(function () {
+            var cookieConsentElements = $("#cookieConsent, .cookie_grayL");
+            document.querySelector("#cookieConsent button[data-accept]").addEventListener("click", function (event) {
+                $.ajax({
+                    type: "POST",
+                    url: "https://auth2.circle.ms/Account/AcceptTracking",
+                    cache: false,
+                    
+                    data: {
+                        userId: ""
+                    },
+                    xhrFields: {
+                        withCredentials: true
+                    }
+                }).then(function () {
+                    cookieConsentElements.hide();
+                });
+            }, false);
+            document.querySelector("#cookieConsent button[data-decline]").addEventListener("click", function (event) {
+                $.ajax({
+                    type: "POST",
+                    url: "https://auth2.circle.ms/Account/DeclineTracking",
+                    cache: false,
+                    
+                    data: {
+                        userId: ""
+                    },
+                    xhrFields: {
+                        withCredentials: true
+                    }
+                }).then(function () {
+                    cookieConsentElements.hide();
+                });
+            }, false);
+            $.ajax({
+                type: "GET",
+                url: "https://auth2.circle.ms/Account/ContentTracking?userId=",
+                cache: true
+            }).then(function (txt) {
+                $("#cookieConsent div[data-content]").html(txt);
+                cookieConsentElements.show();
+            });
+
+            $(".cookie_grayL, #cookieConsent button[data-accept-required]").on("click",
+                function() {
+                    cookieConsentElements.hide();
+                });
+        });
+    </script>
+
+</body>
+</html>
+
