@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Fix Circle UI",
+    "name": "Fix Circle UI - コミケWebカタログのUIを改善",
     "version": "1.0",
-    "description": "コミケWebカタログのUIを改善します。",
+    "description": "コミックマーケットのWebカタログのUIを改善します。",
     "content_scripts": [
       {
         "matches": ["https://webcatalog-free.circle.ms/Circle/List", "https://webcatalog-free.circle.ms/User/Favorites"],
