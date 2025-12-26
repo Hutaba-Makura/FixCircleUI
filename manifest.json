@@ -6,7 +6,7 @@
     "content_scripts": [
       {
         "matches": ["https://webcatalog-free.circle.ms/Circle/List*", "https://webcatalog-free.circle.ms/User/Favorites*"],
-        "js": ["content.js"],
+        "js": ["content.js", "color-filter.js", "link-replacer.js"],
         "run_at": "document_idle"
       }
     ],
