@@ -177,7 +177,7 @@
       // 全選択ボタン
       const selectAllBtn = document.createElement('button');
       selectAllBtn.textContent = '全て選択';
-      selectAllBtn.style.cssText = 'padding: 4px 8px; margin-right: 10px; cursor: pointer;';
+      selectAllBtn.style.cssText = 'padding: 4px 8px; margin-right: 10px; cursor: pointer; align-items: top;';
       selectAllBtn.onclick = () => {
         COLOR_DEFINITIONS.forEach(c => {
           ALLOWLIST.add(c.id);
@@ -191,7 +191,7 @@
       // 全解除ボタン
       const deselectAllBtn = document.createElement('button');
       deselectAllBtn.textContent = '全て解除';
-      deselectAllBtn.style.cssText = 'padding: 4px 8px; cursor: pointer;';
+      deselectAllBtn.style.cssText = 'padding: 4px 8px; cursor: pointer; align-items: top;';
       deselectAllBtn.onclick = () => {
         ALLOWLIST.clear();
         COLOR_DEFINITIONS.forEach(c => {
@@ -205,14 +205,18 @@
       // 各色のチェックボックス
       COLOR_DEFINITIONS.forEach(c => {
         const label = document.createElement('label');
-        label.style.cssText = 'display: flex; align-items: center; cursor: pointer;';
-  
+        label.style.cssText = 'display: flex; flex-direction: column; align-items: center; cursor: pointer;';
+
+        // 色見本を上に配置
+        const colorBox = document.createElement('span');
+        colorBox.style.cssText = `display: inline-block; width: 30px; height: 30px; background-color: ${c.color}; border: 1px solid #ccc; margin-bottom: 5px; border-radius: 3px;`;
+
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.id = `color-checkbox-${c.id}`;
         checkbox.value = c.id;
         checkbox.checked = ALLOWLIST.has(c.id);
-        checkbox.style.cssText = 'margin-right: 5px;';
+        checkbox.style.cssText = 'cursor: pointer; margin-right: 0px; align-items: center;';
         checkbox.onchange = () => {
           if (checkbox.checked) {
             ALLOWLIST.add(c.id);
@@ -221,12 +225,9 @@
           }
           applyFilter();
         };
-  
-        const colorBox = document.createElement('span');
-        colorBox.style.cssText = `display: inline-block; width: 20px; height: 20px; background-color: ${c.color}; border: 1px solid #ccc; margin-right: 5px; vertical-align: middle;`;
-  
-        label.appendChild(checkbox);
+
         label.appendChild(colorBox);
+        label.appendChild(checkbox);
         wrapper.appendChild(label);
       });
   
