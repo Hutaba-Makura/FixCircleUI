@@ -148,9 +148,6 @@
           // DOMから色を取得（フォールバック）
           color = detectColorFromRow(tr);
         }
-
-        // TODO: 削除
-        console.log(circles[i]);
         
         const rows = groupRows(tr);
         // 色がnull/undefinedの場合（色が指定されていないサークル）は、ホワイトがチェックされている場合のみ表示
