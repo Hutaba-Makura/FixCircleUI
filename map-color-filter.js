@@ -79,22 +79,6 @@
       });
     }
   
-
-    let previousFullscreenMode = false;
-    /**
-     * 全画面表示モードかどうかを検知
-     * @returns {boolean} 全画面表示の場合true
-     */
-    function isFullscreenMode() {
-      // map-fullscreen-close要素の親の存在確認（全画面時にのみ表示される×ボタン）
-      const fullscreenContainer = document.querySelector('.map-fullscreen');
-      if (fullscreenContainer && fullscreenContainer.style.display !== 'none') {
-        return true;
-      }
-
-      return false;
-    }
-  
     /**
      * 全てのmap-favorites内のdiv要素を取得
      */
@@ -171,30 +155,11 @@
      * UI挿入先を検出
      */
     function findInsertTarget() {
-      console.log('あああああ');
-      // 優先: map-fullscreen-close要素の下に配置　これがデフォルト
-      const closeButton = document.querySelector('.map-fullscreen-close');
-      if (closeButton && closeButton.parentElement && isFullscreenMode()) {
-        console.log('closeButton.parentElement', closeButton.parentElement);
-        return { target: closeButton.parentElement, type: 'after-close-button', element: closeButton };
-      }
-      
-      // 候補1: マップコンテナの上部　企業MAPだとこれがデフォルト
       let mapContainer = document.querySelector('.map-container, .m-map, #map, [class*="map-"]');
       if (mapContainer && mapContainer.parentElement) {
-        console.log('mapContainer.parentElement', mapContainer.parentElement);
         return { target: mapContainer.parentElement, type: 'map-container', element: mapContainer };
       }
 
-      // 候補2: メインセクション
-      const mainSection = document.querySelector('.m-section-body, .m-base--inner, .main-content');
-      if (mainSection) {
-        console.log('mainSection', mainSection);
-        return { target: mainSection, type: 'section' };
-      }
-      
-      // 候補3: body直下
-      console.log('document.body', document.body);
       return { target: document.body, type: 'body' };
     }
   
@@ -202,7 +167,6 @@
      * チェックボックスUIを作成
      */
     function createCheckboxUI() {
-      previousFullscreenMode = isFullscreenMode();
       const insertInfo = findInsertTarget();
       if (!insertInfo) return;
 
@@ -442,8 +406,8 @@
         return;
       }
       
-      // UIが存在しない場合は作成,または全画面モードが変更された場合は作成
-      if (!document.querySelector('.map-color-filter') || previousFullscreenMode !== isFullscreenMode()) {
+      // UIが存在しない場合は作成
+      if (!document.querySelector('.map-color-filter')) {
         createCheckboxUI();
       }
 
