@@ -46,14 +46,22 @@
      * map-favorites要素から色情報を取得
      */
     function detectColorFromElement(element) {
-      // favorite-backgroundcolor-{数字}のパターンを探す
-      const match = Array.from(element.classList).find(c => /^favorite-backgroundcolor-\d+$/.test(c));
-      if (match) {
-        return match.split('-').pop();
+      const classes = Array.from(element.classList);
+      
+      // favorite-backgroundcolor-{数字}のパターンを探す（優先）
+      const bgMatch = classes.find(c => /^favorite-backgroundcolor-\d+$/.test(c));
+      if (bgMatch) {
+        return bgMatch.split('-').pop();
+      }
+      
+      // favorite-bordercolor-{数字}のパターンを探す
+      const borderMatch = classes.find(c => /^favorite-bordercolor-\d+$/.test(c));
+      if (borderMatch) {
+        return borderMatch.split('-').pop();
       }
       
       // favorite-backgroundcolor- のみの場合は色が無い（ホワイト扱い）
-      const hasEmptyColor = Array.from(element.classList).some(c => c === 'favorite-backgroundcolor-');
+      const hasEmptyColor = classes.some(c => c === 'favorite-backgroundcolor-');
       if (hasEmptyColor) {
         return '10';
       }
@@ -102,6 +110,7 @@
       
       mapElements.forEach(element => {
         const color = detectColorFromElement(element);
+        console.log({title: element.title, color: color});
         
         // 色がnull/undefinedの場合（色が指定されていないサークル）は、ホワイトがチェックされている場合のみ表示
         const show = (color && ALLOWLIST.has(color)) || ((color === '10' || color === null) && ALLOWLIST.has('10'));
