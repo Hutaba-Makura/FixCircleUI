@@ -130,7 +130,12 @@
      * UI挿入先を検出
      */
     function findInsertTarget() {
-      // マップページの適切な場所を探す
+      // 優先: map-fullscreen-close要素の下に配置
+      const closeButton = document.querySelector('.map-fullscreen-close');
+      if (closeButton && closeButton.parentElement) {
+        return { target: closeButton.parentElement, type: 'after-close-button', element: closeButton };
+      }
+      
       // 候補1: マップコンテナの上部
       let mapContainer = document.querySelector('.map-container, .m-map, #map, [class*="map-"]');
       if (mapContainer && mapContainer.parentElement) {
@@ -161,8 +166,8 @@
       const container = document.createElement('div');
       container.className = 'map-color-filter';
       container.style.cssText = `
-        position: fixed;
-        top: 10px;
+        position: absolute;
+        top: 50px;
         right: 10px;
         z-index: 10000;
         background-color: rgba(255, 255, 255, 0.95);
@@ -321,11 +326,14 @@
       container.appendChild(controlsWrapper);
       
       // 挿入場所に応じて適切に配置
-      if (insertInfo.type === 'map-container' && insertInfo.element) {
-        // マップコンテナの前に配置（固定位置なので実質的には画面に固定）
+      if (insertInfo.type === 'after-close-button' && insertInfo.element) {
+        // map-fullscreen-close要素の下（次の兄弟要素として）に配置
+        insertInfo.element.parentNode.insertBefore(container, insertInfo.element.nextSibling);
+      } else if (insertInfo.type === 'map-container' && insertInfo.element) {
+        // マップコンテナの前に配置
         insertInfo.target.insertBefore(container, insertInfo.element);
       } else {
-        // その他: 先頭に配置（固定位置なので実質的には画面に固定）
+        // その他: 先頭に配置
         insertInfo.target.insertBefore(container, insertInfo.target.firstChild);
       }
     }
