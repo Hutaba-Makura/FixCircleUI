@@ -178,7 +178,7 @@
       container.className = 'map-color-filter';
       container.style.cssText = `
         position: fixed;
-        top: 50px;
+        top: 75px;
         right: 10px;
         z-index: 10000;
         background-color: rgba(255, 255, 255, 0.95);
@@ -214,10 +214,16 @@
         const wrapper = container.querySelector('.filter-controls-wrapper');
         if (wrapper.style.display === 'none') {
           wrapper.style.display = 'block';
+          label.style.display = 'block';
           minimizeBtn.textContent = '−';
+          container.style.padding = '12px';
+          header.style.marginBottom = '8px';
         } else {
           wrapper.style.display = 'none';
+          label.style.display = 'none';
           minimizeBtn.textContent = '+';
+          container.style.padding = '6px';
+          header.style.marginBottom = '0px';
         }
       };
       
