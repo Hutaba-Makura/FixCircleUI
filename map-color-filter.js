@@ -254,7 +254,7 @@
       selectAllBtn.style.cssText = `
         padding: 6px 10px;
         cursor: pointer;
-        background-color: #FF944A;
+        background-color: rgb(252, 0, 135);
         color: white;
         border: none;
         border-radius: 4px;
