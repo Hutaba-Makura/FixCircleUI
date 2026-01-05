@@ -169,25 +169,29 @@
      * UI挿入先を検出
      */
     function findInsertTarget() {
-      // 優先: map-fullscreen-close要素の下に配置
+      // 優先: map-fullscreen-close要素の下に配置　これがデフォルト
       const closeButton = document.querySelector('.map-fullscreen-close');
       if (closeButton && closeButton.parentElement) {
+        console.log('closeButton.parentElement', closeButton.parentElement);
         return { target: closeButton.parentElement, type: 'after-close-button', element: closeButton };
       }
       
-      // 候補1: マップコンテナの上部
+      // 候補1: マップコンテナの上部　企業MAPだとこれがデフォルト
       let mapContainer = document.querySelector('.map-container, .m-map, #map, [class*="map-"]');
       if (mapContainer && mapContainer.parentElement) {
+        console.log('mapContainer.parentElement', mapContainer.parentElement);
         return { target: mapContainer.parentElement, type: 'map-container', element: mapContainer };
       }
       
       // 候補2: メインセクション
       const mainSection = document.querySelector('.m-section-body, .m-base--inner, .main-content');
       if (mainSection) {
+        console.log('mainSection', mainSection);
         return { target: mainSection, type: 'section' };
       }
       
       // 候補3: body直下
+      console.log('document.body', document.body);
       return { target: document.body, type: 'body' };
     }
   
