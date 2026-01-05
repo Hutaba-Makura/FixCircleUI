@@ -187,7 +187,7 @@
         right: 10px;
         z-index: 10000;
         background-color: rgba(255, 255, 255, 0.95);
-        padding: 15px;
+        padding: 12px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         max-width: 400px;
@@ -196,13 +196,13 @@
 
       // ヘッダー（閉じるボタン付き）
       const header = document.createElement('div');
-      header.style.cssText = 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;';
+      header.style.cssText = 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;';
       
       // ラベル
       const label = document.createElement('div');
       label.id = 'map-color-filter-label';
       label.textContent = '表示する色を選択:';
-      label.style.cssText = 'font-size: 14px;';
+      label.style.cssText = 'font-size: 12px;';
       
       // 最小化ボタン
       const minimizeBtn = document.createElement('button');
@@ -210,7 +210,7 @@
       minimizeBtn.style.cssText = `
         background: none;
         border: none;
-        font-size: 20px;
+        font-size: 18px;
         cursor: pointer;
         padding: 0 5px;
         line-height: 1;
@@ -236,13 +236,13 @@
       
       // ボタンコンテナ
       const buttonContainer = document.createElement('div');
-      buttonContainer.style.cssText = 'display: flex; gap: 5px; margin-bottom: 10px;';
+      buttonContainer.style.cssText = 'display: flex; gap: 5px; margin-bottom: 8px;';
 
       // 全選択ボタン
       const selectAllBtn = document.createElement('button');
       selectAllBtn.textContent = '全選択';
       selectAllBtn.style.cssText = `
-        padding: 8px 12px;
+        padding: 6px 10px;
         cursor: pointer;
         background-color: #FF944A;
         color: white;
@@ -265,7 +265,7 @@
       const deselectAllBtn = document.createElement('button');
       deselectAllBtn.textContent = '全解除';
       deselectAllBtn.style.cssText = `
-        padding: 8px 12px;
+        padding: 6px 10px;
         cursor: pointer;
         background-color: #666;
         color: white;
@@ -288,7 +288,7 @@
 
       // チェックボックスコンテナ
       const checkboxContainer = document.createElement('div');
-      checkboxContainer.style.cssText = 'display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;';
+      checkboxContainer.style.cssText = 'display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;';
 
       // 各色のチェックボックス
       COLOR_DEFINITIONS.forEach(c => {
@@ -298,7 +298,7 @@
           flex-direction: column;
           align-items: center;
           cursor: pointer;
-          padding: 5px;
+          padding: 4px;
           border-radius: 4px;
           transition: background-color 0.2s;
         `;
@@ -309,11 +309,11 @@
         const colorBox = document.createElement('span');
         colorBox.style.cssText = `
           display: inline-block;
-          width: 35px;
-          height: 35px;
+          width: 28px;
+          height: 28px;
           background-color: ${c.color};
           border: 2px solid #999;
-          margin-bottom: 5px;
+          margin-bottom: 4px;
           border-radius: 4px;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         `;
@@ -323,7 +323,7 @@
         checkbox.id = `map-color-checkbox-${c.id}`;
         checkbox.value = c.id;
         checkbox.checked = ALLOWLIST.has(c.id);
-        checkbox.style.cssText = 'cursor: pointer; width: 18px; height: 18px; margin-left: 0px; margin-right: 1px;';
+        checkbox.style.cssText = 'cursor: pointer; width: 16px; height: 16px; margin-left: 0px; margin-right: 1px;';
         checkbox.onchange = () => {
           if (checkbox.checked) {
             ALLOWLIST.add(c.id);
