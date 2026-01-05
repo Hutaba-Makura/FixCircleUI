@@ -93,7 +93,7 @@
       const mapElements = getAllMapFavorites();
       
       // 全件数（フィルター前）
-      let totalCount = mapElements.length;
+      const totalCount = url.includes('/scale=1' || '/scale=2') ? Math.floor(mapElements.length / 2) : mapElements.length;
       let displayedCount = 0;
       
       mapElements.forEach(element => {
@@ -118,14 +118,8 @@
         }
       });
       
-      // 重複チェック: 連続する要素のtitleが同じ場合、重複とみなす
-      // （マップ上で同じサークルが複数回表示される場合の対応）
-      if (mapElements.length >= 2 && mapElements.length % 2 === 0 && mapElements[0]?.title && mapElements[1]?.title) {
-        if (mapElements[0].title === mapElements[1].title) {
-          displayedCount = Math.floor(displayedCount / 2);
-          totalCount = Math.floor(totalCount / 2);
-        }
-      }
+      // 重複チェック
+      displayedCount = url.includes('/scale=1' || '/scale=2') ? Math.floor(displayedCount / 2) : displayedCount;
       
       // ラベルの件数表示を更新
       updateLabelCount(displayedCount, totalCount);
