@@ -62,10 +62,10 @@
     }
   
     /**
-     * 全てのmap-favorites要素を取得
+     * 全てのmap-favorites内のdiv要素を取得
      */
     function getAllMapFavorites() {
-      return Array.from(document.querySelectorAll('.map-favorites'));
+      return Array.from(document.querySelectorAll('.map-favorites > div'));
     }
   
     // ============================================================================
@@ -186,7 +186,7 @@
       const label = document.createElement('div');
       label.id = 'map-color-filter-label';
       label.textContent = '表示する色を選択:';
-      label.style.cssText = 'font-weight: bold; font-size: 14px;';
+      label.style.cssText = 'font-size: 14px;';
       
       // 最小化ボタン
       const minimizeBtn = document.createElement('button');
@@ -307,7 +307,7 @@
         checkbox.id = `map-color-checkbox-${c.id}`;
         checkbox.value = c.id;
         checkbox.checked = ALLOWLIST.has(c.id);
-        checkbox.style.cssText = 'cursor: pointer; width: 18px; height: 18px;';
+        checkbox.style.cssText = 'cursor: pointer; width: 18px; height: 18px; margin-left: 0px; margin-right: 1px;';
         checkbox.onchange = () => {
           if (checkbox.checked) {
             ALLOWLIST.add(c.id);
