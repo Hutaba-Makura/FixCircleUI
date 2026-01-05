@@ -118,6 +118,15 @@
         }
       });
       
+      // 重複チェック: 連続する要素のtitleが同じ場合、重複とみなす
+      // （マップ上で同じサークルが複数回表示される場合の対応）
+      if (mapElements.length >= 2 && mapElements.length%2 === 0 && mapElements[0]?.title && mapElements[1]?.title) {
+        if (mapElements[0].title === mapElements[1].title) {
+          displayedCount = displayedCount/2;
+          totalCount = totalCount/2;
+        }
+      }
+      
       // ラベルの件数表示を更新
       updateLabelCount(displayedCount, totalCount);
     }
