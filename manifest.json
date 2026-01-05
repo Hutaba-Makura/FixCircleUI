@@ -8,6 +8,11 @@
         "matches": ["https://webcatalog-free.circle.ms/Circle/List*", "https://webcatalog-free.circle.ms/User/Favorites*"],
         "js": ["color-filter.js", "link-replacer.js"],
         "run_at": "document_idle"
+      },
+      {
+        "matches": ["https://webcatalog-free.circle.ms/Map*"],
+        "js": ["map-color-filter.js"],
+        "run_at": "document_idle"
       }
     ],
     "icons": {
