@@ -86,7 +86,7 @@
     function isFullscreenMode() {
       // map-fullscreen-close要素の存在確認（全画面時にのみ表示される×ボタン）
       const closeButton = document.querySelector('.map-fullscreen-close');
-      if (closeButton && closeButton.offsetParent !== null) {
+      if (closeButton && closeButton.style.display !== 'none') {
         return true;
       }
       
