@@ -80,6 +80,20 @@
     }
   
     /**
+     * 全画面表示モードかどうかを検知
+     * @returns {boolean} 全画面表示の場合true
+     */
+    function isFullscreenMode() {
+      // map-fullscreen-close要素の存在確認（全画面時にのみ表示される×ボタン）
+      const closeButton = document.querySelector('.map-fullscreen-close');
+      if (closeButton && closeButton.offsetParent !== null) {
+        return true;
+      }
+      
+      return false;
+    }
+  
+    /**
      * 全てのmap-favorites内のdiv要素を取得
      */
     function getAllMapFavorites() {
@@ -120,7 +134,6 @@
       
       mapElements.forEach(element => {
         const color = detectColorFromElement(element);
-        console.log({title: element.title, color: color});
         
         // 色がnull/undefinedの場合（色が指定されていないサークル）は、ホワイトがチェックされている場合のみ表示
         const show = (color && ALLOWLIST.has(color)) || ((color === '10' || color === null) && ALLOWLIST.has('10'));
