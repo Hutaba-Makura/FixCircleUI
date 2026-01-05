@@ -92,8 +92,12 @@
     function applyFilter() {
       const mapElements = getAllMapFavorites();
       
+      // 現在のハッシュを取得（ページ遷移後も正しく取得するため）
+      const currentHash = window.location.hash;
+      const isScaledView = currentHash.includes('/scale=1') || currentHash.includes('/scale=2');
+      
       // 全件数（フィルター前）
-      const totalCount = url.includes('/scale=1' || '/scale=2') ? Math.floor(mapElements.length / 2) : mapElements.length;
+      const totalCount = isScaledView ? Math.floor(mapElements.length / 2) : mapElements.length;
       let displayedCount = 0;
       
       mapElements.forEach(element => {
@@ -118,8 +122,8 @@
         }
       });
       
-      // 重複チェック
-      displayedCount = url.includes('/scale=1' || '/scale=2') ? Math.floor(displayedCount / 2) : displayedCount;
+      // 重複チェック（スケール表示の場合は半分にする）
+      displayedCount = isScaledView ? Math.floor(displayedCount / 2) : displayedCount;
       
       // ラベルの件数表示を更新
       updateLabelCount(displayedCount, totalCount);
