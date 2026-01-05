@@ -136,7 +136,7 @@
     function updateLabelCount(displayedCount, totalCount) {
       const label = document.getElementById('multi-color-filter-label');
       if (label) {
-        const newText = `表示する色を選択（${displayedCount}/${totalCount}表示）:`;
+        const newText = `表示する色を選択（${displayedCount}/${totalCount}件表示）:`;
         // 現在のテキストと同じ場合は更新しない（無限ループ防止）
         if (label.textContent !== newText) {
           label.textContent = newText;
