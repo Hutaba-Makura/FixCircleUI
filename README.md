@@ -19,6 +19,6 @@
 
 ## ライセンス
 
-MITに準拠、但し改変を行う際は個人法人に関わらず本リポジトリのIssueにおいてHutaba-Makuraにメンションをかけた上で使用用途を記すこととする。
+MITに準拠、但し改変を行う際は個人法人に関わらず本リポジトリのIssuesにおいて[@Hutaba-Makura](https://github.com/Hutaba-Makura)にメンションをかけた上で使用用途を記すこととする。
 
 Copyright 2026 Hutaba-Makura
