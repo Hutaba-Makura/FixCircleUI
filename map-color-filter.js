@@ -68,6 +68,16 @@
       
       return null;
     }
+
+    /**
+     * Ads要素を非表示にする
+     */
+    function hideAds() {
+      const ads = document.querySelectorAll('.map-ads');
+      ads.forEach(ad => {
+        ad.style.display = 'none';
+      });
+    }
   
     /**
      * 全てのmap-favorites内のdiv要素を取得
@@ -364,6 +374,7 @@
     function init() {
       // マップ要素が読み込まれるまで待機
       const checkMapLoaded = setInterval(() => {
+        hideAds();
         const mapElements = getAllMapFavorites();
         if (mapElements.length > 0) {
           clearInterval(checkMapLoaded);
@@ -413,6 +424,10 @@
       // UIが存在しない場合は作成
       if (!document.querySelector('.map-color-filter')) {
         createCheckboxUI();
+      }
+
+      if (document.querySelector('.map-ads')) {
+        hideAds();
       }
       
       // map-favorites要素が追加または削除された場合のみフィルタを再適用
