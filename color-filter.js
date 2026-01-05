@@ -131,12 +131,29 @@
     // ============================================================================
   
     /**
+     * ラベルの件数表示を更新
+     */
+    function updateLabelCount(displayedCount, totalCount) {
+      const label = document.getElementById('multi-color-filter-label');
+      if (label) {
+        const newText = `表示する色を選択（${displayedCount}/${totalCount}表示）:`;
+        // 現在のテキストと同じ場合は更新しない（無限ループ防止）
+        if (label.textContent !== newText) {
+          label.textContent = newText;
+        }
+      }
+    }
+
+    /**
      * フィルタを適用してサークルを表示/非表示にする
      */
     function applyFilter() {
-      const model = parseModel();
-      const circles = model && Array.isArray(model.Circles) ? model.Circles : [];
+      const circles = cachedModel && Array.isArray(cachedModel.Circles) ? cachedModel.Circles : [];
       const detailRows = Array.from(document.querySelectorAll('tr.webcatalog-circle-list-detail'));
+      
+      // 全件数（フィルター前）
+      const totalCount = detailRows.length;
+      let displayedCount = 0;
       
       detailRows.forEach((tr, i) => {
         let color = null;
@@ -155,7 +172,15 @@
         rows.forEach(r => {
           r.style.display = show ? '' : 'none';
         });
+        
+        // 表示されている場合はカウント
+        if (show) {
+          displayedCount++;
+        }
       });
+      
+      // ラベルの件数表示を更新
+      updateLabelCount(displayedCount, totalCount);
     }
   
     // ============================================================================
@@ -205,6 +230,7 @@
   
       // ラベル
       const label = document.createElement('div');
+      label.id = 'multi-color-filter-label';
       label.textContent = '表示する色を選択:';
       label.style.cssText = 'margin-bottom: 8px; font-weight: bold;';
       container.appendChild(label);
@@ -294,9 +320,14 @@
     /**
      * 初期化処理
      */
+    let cachedModel = null;
+
     function init() {
+      cachedModel = parseModel();
       createCheckboxUI();
-      applyFilter();
+      if (cachedModel) {
+        applyFilter();
+      }
     }
   
     // DOMContentLoadedを待つ
@@ -307,11 +338,32 @@
     }
     
     // DOMの変更を監視してフィルタを再適用
-    new MutationObserver(() => {
+    new MutationObserver((mutations) => {
+      // .multi-color-filter内の変更は無視（無限ループ防止）
+      let shouldIgnore = false;
+      for (const mutation of mutations) {
+        const target = mutation.target;
+        if (target.closest && target.closest('.multi-color-filter')) {
+          shouldIgnore = true;
+          break;
+        }
+        // テキストノードの変更もチェック
+        if (target.nodeType === Node.TEXT_NODE && target.parentElement) {
+          if (target.parentElement.closest('.multi-color-filter')) {
+            shouldIgnore = true;
+            break;
+          }
+        }
+      }
+      
+      if (shouldIgnore) {
+        return;
+      }
+      
       if (!document.querySelector('.multi-color-filter')) {
         createCheckboxUI();
       }
       applyFilter();
-    }).observe(document.documentElement, { childList: true, subtree: true });
+    }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
   })();
 
