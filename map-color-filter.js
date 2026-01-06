@@ -11,8 +11,7 @@
   
     // ページタイプをチェック
     const url = window.location.pathname;
-    const hash = window.location.hash;
-    const isMapPage = url.includes('/Map') || hash.includes('/Map');
+    const isMapPage = url.includes('/Map');
     
     if (!isMapPage) {
       return; // マップページでない場合は終了
