@@ -6,6 +6,8 @@
     "content_scripts": [
       {
         "matches": [
+                    "https://webcatalog.circle.ms/User/Favorites*",
+                    "https://webcatalog.circle.ms/Circle/List*",
                     "https://classic-webcatalog.circle.ms/User/Favorites*",
                     "https://classic-webcatalog.circle.ms/Circle/List*"
                    ],
@@ -14,6 +16,7 @@
       },
       {
         "matches": [
+                    "https://webcatalog.circle.ms/Map*",
                     "https://classic-webcatalog.circle.ms/Map*"
               ],
         "js": ["map-color-filter.js"],
