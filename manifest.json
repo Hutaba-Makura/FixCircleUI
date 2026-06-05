@@ -5,12 +5,17 @@
     "description": "コミックマーケットのWebカタログのUIを改善します。",
     "content_scripts": [
       {
-        "matches": ["https://webcatalog-free.circle.ms/Circle/List*", "https://webcatalog-free.circle.ms/User/Favorites*"],
+        "matches": [
+                    "https://classic-webcatalog.circle.ms/User/Favorites*",
+                    "https://classic-webcatalog.circle.ms/Circle/List*"
+                   ],
         "js": ["color-filter.js", "link-replacer.js"],
         "run_at": "document_idle"
       },
       {
-        "matches": ["https://webcatalog-free.circle.ms/Map*"],
+        "matches": [
+                    "https://classic-webcatalog.circle.ms/Map*"
+              ],
         "js": ["map-color-filter.js"],
         "run_at": "document_idle"
       }
