@@ -28,10 +28,45 @@
     return null;
   }
 
+  /**
+   * DOMから色情報を取得（フォールバック用）
+   */
+  function detectColorFromRow(detailTr) {
+    if(isFavoritesPage) {
+      // /User/Favoritesページ: td.favorite-color-{数字}から取得
+      const td = detailTr.querySelector('td.favorite-color, td[class*="favorite-color-"]');
+      if (!td) return null;
+      
+      const match = Array.from(td.classList).find(c => /^favorite-color-\d+$/.test(c));
+      return match ? match.split('-').pop() : null;
+    } else if(isCircleListPage) {
+      // /Circle/Listページ: circlecut-overlay-favorite favorite-backgroundcolor-{数字}から取得
+      // または favorite-backgroundcolor- のみ（色が無い場合）
+      const element = detailTr.querySelector('.circlecut-overlay-favorite[class*="favorite-backgroundcolor-"]');
+      if (!element) return null;
+      
+      // favorite-backgroundcolor-{数字}のパターンを探す
+      const match = Array.from(element.classList).find(c => /^favorite-backgroundcolor-\d+$/.test(c));
+      if (match) {
+        return match.split('-').pop();
+      }
+
+      // favorite-backgroundcolor- のみの場合は色が無い（nullを返す）
+      const hasEmptyColor = Array.from(element.classList).some(c => c === 'favorite-backgroundcolor-');
+      if (hasEmptyColor) {
+        return '10';
+      }
+
+      return null;
+    }
+    return null;
+  }
+
   // 既存の名前空間を上書きせずに拡張
   window.FixCircleUI = Object.assign(window.FixCircleUI || {}, {
     parseModel,
     getCircleDataById,
-    getCircleIdFromRow
+    getCircleIdFromRow,
+    detectColorFromRow
   });
 })();
