@@ -33,7 +33,7 @@
     ];
   
     // 表示したい色ID（Setで管理）
-    let ALLOWLIST = new Set();
+    const ALLOWLIST = new Set();
   
     // 初期状態：全ての色を表示
     COLOR_DEFINITIONS.forEach(c => ALLOWLIST.add(c.id));
@@ -42,18 +42,8 @@
     // ユーティリティ関数
     // ============================================================================
   
-    /**
-     * TheModelからJSONデータを取得
-     */
-    function parseModel() {
-      const el = document.getElementById('TheModel');
-      if (!el) return null;
-      try {
-        return JSON.parse(el.textContent || '{}');
-      } catch {
-        return null;
-      }
-    }
+    // 共通ユーティリティをグローバル名前空間から取得（utils.jsを先に読み込むこと）
+    const { parseModel, getCircleDataById, getCircleIdFromRow } = window.FixCircleUI;
   
     /**
      * サークルの詳細行に関連する全ての行を取得
@@ -65,8 +55,8 @@
     function groupRows(detailTr) {
       const prev = detailTr.previousElementSibling;
       const r1 = detailTr.nextElementSibling;
-      const r2 = r1 && r1.nextElementSibling;
-      const r3 = r2 && r2.nextElementSibling;
+      const r2 = r1?.nextElementSibling;
+      const r3 = r2?.nextElementSibling;
       const rows = [];
       
       // 前の行（infotable-sep）を追加
@@ -148,7 +138,7 @@
      * フィルタを適用してサークルを表示/非表示にする
      */
     function applyFilter() {
-      const circles = cachedModel && Array.isArray(cachedModel.Circles) ? cachedModel.Circles : [];
+      const circles = Array.isArray(cachedModel?.Circles) ? cachedModel.Circles : [];
       const detailRows = Array.from(document.querySelectorAll('tr.webcatalog-circle-list-detail'));
       
       // 全件数（フィルター前）
@@ -168,7 +158,7 @@
         
         const rows = groupRows(tr);
         // 色がnull/undefinedの場合（色が指定されていないサークル）は、ホワイトがチェックされている場合のみ表示
-        const show = (color && ALLOWLIST.has(color)) || ((color === '10' || color === null) && ALLOWLIST.has('10'));
+        const show = ((color != null && ALLOWLIST.has(color)) || ((color === '10' || color === null) && ALLOWLIST.has('10')));
         rows.forEach(r => {
           r.style.display = show ? '' : 'none';
         });
@@ -343,7 +333,7 @@
       let shouldIgnore = false;
       for (const mutation of mutations) {
         const target = mutation.target;
-        if (target.closest && target.closest('.multi-color-filter')) {
+        if (target?.closest?.('.multi-color-filter')) {
           shouldIgnore = true;
           break;
         }

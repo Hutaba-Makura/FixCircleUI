@@ -19,39 +19,18 @@
     // ユーティリティ関数
     // ============================================================================
   
-    /**
-     * TheModelからJSONデータを取得
-     */
-    function parseModel() {
-      const el = document.getElementById('TheModel');
-      if (!el) return null;
-      try {
-        return JSON.parse(el.textContent || '{}');
-      } catch {
-        return null;
-      }
-    }
+    // 共通ユーティリティをグローバル名前空間から取得（utils.jsを先に読み込むこと）
+    const { parseModel, getCircleDataById, getCircleIdFromRow } = window.FixCircleUI;
   
     /**
      * サークルIDから対応するサークルデータを取得
      */
-    function getCircleDataById(circleId, model) {
-      if (!model || !Array.isArray(model.Circles)) return null;
-      return model.Circles.find(c => c.Id === circleId || c.CircleId === circleId);
-    }
+    // （getCircleDataById は上の共通定義を使用）
   
     /**
      * tr要素からサークルIDを取得
      */
-    function getCircleIdFromRow(tr) {
-      // data-bind="attr: { id: Id }" から取得
-      const id = tr.getAttribute('id');
-      if (id) {
-        const numId = parseInt(id, 10);
-        if (!isNaN(numId)) return numId;
-      }
-      return null;
-    }
+    // （getCircleIdFromRow は上の共通定義を使用）
   
     // ============================================================================
     // リンク置換機能
@@ -85,25 +64,23 @@
       }
       
       let processedCount = 0;
-      detailRows.forEach(tr => {
+      for (const tr of detailRows) {
         const circleId = getCircleIdFromRow(tr);
-        if (!circleId) return;
+        if (!circleId) continue;
 
         const circleData = getCircleDataById(circleId, model);
-        if (!circleData) {
-          return;
-        }
+        if (!circleData) continue;
 
         // support-list内の各アイコンを処理
         // HTML構造: tr.webcatalog-circle-list-detail (1行目) -> tr (2行目) -> tr (3行目にsupport-list)
         let supportList = null;
-        
+
         // 方法1: 次の次の兄弟要素から探す
         const thirdRow = tr.nextElementSibling?.nextElementSibling;
         if (thirdRow) {
           supportList = thirdRow.querySelector('.support-list');
         }
-        
+
         // 方法2: まだ見つからない場合は、table内のすべてのsupport-listから対応するものを探す
         if (!supportList) {
           const table = tr.closest('table');
@@ -116,14 +93,12 @@
             }
           }
         }
-        
-        if (!supportList) {
-          return; // support-listが見つからない
-        }
-        
+
+        if (!supportList) continue; // support-listが見つからない
+
         processSupportList(supportList, circleData, circleId);
         processedCount++;
-      });
+      }
       
       if (processedCount > 0) {
         console.log(`Processed ${processedCount} support lists`);

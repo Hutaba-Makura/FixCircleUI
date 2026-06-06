@@ -11,7 +11,7 @@
                     "https://classic-webcatalog.circle.ms/User/Favorites*",
                     "https://classic-webcatalog.circle.ms/Circle/List*"
                    ],
-        "js": ["color-filter.js", "link-replacer.js"],
+        "js": ["utils.js", "color-filter.js", "link-replacer.js"],
         "run_at": "document_idle"
       },
       {
