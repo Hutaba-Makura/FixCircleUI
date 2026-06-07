@@ -4,6 +4,22 @@
 (function () {
   'use strict';
 
+  // ページ判定ユーティリティ
+  function isFavoritesPage(pathname = window.location.pathname) {
+    return String(pathname || '').includes('/User/Favorites');
+  }
+
+  function isCircleListPage(pathname = window.location.pathname) {
+    return String(pathname || '').includes('/Circle/List');
+  }
+
+  function getPageFlags(pathname = window.location.pathname) {
+    return {
+      isFavoritesPage: isFavoritesPage(pathname),
+      isCircleListPage: isCircleListPage(pathname)
+    };
+  }
+
   function parseModel() {
     const el = document.getElementById('TheModel');
     if (!el) return null;
@@ -32,14 +48,14 @@
    * DOMから色情報を取得（フォールバック用）
    */
   function detectColorFromRow(detailTr) {
-    if(isFavoritesPage) {
+    if (isFavoritesPage()) {
       // /User/Favoritesページ: td.favorite-color-{数字}から取得
       const td = detailTr.querySelector('td.favorite-color, td[class*="favorite-color-"]');
       if (!td) return null;
       
       const match = Array.from(td.classList).find(c => /^favorite-color-\d+$/.test(c));
       return match ? match.split('-').pop() : null;
-    } else if(isCircleListPage) {
+    } else if (isCircleListPage()) {
       // /Circle/Listページ: circlecut-overlay-favorite favorite-backgroundcolor-{数字}から取得
       // または favorite-backgroundcolor- のみ（色が無い場合）
       const element = detailTr.querySelector('.circlecut-overlay-favorite[class*="favorite-backgroundcolor-"]');
@@ -67,6 +83,10 @@
     parseModel,
     getCircleDataById,
     getCircleIdFromRow,
-    detectColorFromRow
+    detectColorFromRow,
+    // ページ判定ユーティリティ
+    isFavoritesPage,
+    isCircleListPage,
+    getPageFlags
   });
 })();

@@ -6,32 +6,18 @@
 (function () {
     'use strict';
   
-    // ページタイプをチェック
-    const url = window.location.pathname;
-    const isFavoritesPage = url.includes('/User/Favorites');
-    const isCircleListPage = url.includes('/Circle/List');
+    // ページタイプをチェック（共通ユーティリティを使用）
+    const { isFavoritesPage: _isFavoritesPage, isCircleListPage: _isCircleListPage } = window.FixCircleUI || {};
+    const isFavoritesPage = (_isFavoritesPage || (() => false))();
+    const isCircleListPage = (_isCircleListPage || (() => false))();
     
     if (!isFavoritesPage && !isCircleListPage) {
       return; // 該当するページでない場合は終了
     }
   
-    // ============================================================================
-    // ユーティリティ関数
-    // ============================================================================
-  
     // 共通ユーティリティをグローバル名前空間から取得（utils.jsを先に読み込むこと）
     const { parseModel, getCircleDataById, getCircleIdFromRow } = window.FixCircleUI;
-  
-    /**
-     * サークルIDから対応するサークルデータを取得
-     */
-    // （getCircleDataById は上の共通定義を使用）
-  
-    /**
-     * tr要素からサークルIDを取得
-     */
-    // （getCircleIdFromRow は上の共通定義を使用）
-  
+    
     // ============================================================================
     // リンク置換機能
     // ============================================================================

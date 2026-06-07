@@ -9,10 +9,10 @@
     // 設定
     // ============================================================================
   
-    // ページタイプをチェック
-    const url = window.location.pathname;
-    const isFavoritesPage = url.includes('/User/Favorites');
-    const isCircleListPage = url.includes('/Circle/List');
+    // ページタイプをチェック（共通ユーティリティを使用）
+    const { isFavoritesPage: _isFavoritesPage, isCircleListPage: _isCircleListPage } = window.FixCircleUI || {};
+    const isFavoritesPage = (_isFavoritesPage || (() => false))();
+    const isCircleListPage = (_isCircleListPage || (() => false))();
     
     if (!isFavoritesPage && !isCircleListPage) {
       return; // 該当するページでない場合は終了

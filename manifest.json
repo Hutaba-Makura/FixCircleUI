@@ -6,19 +6,28 @@
     "content_scripts": [
       {
         "matches": [
-                    "https://webcatalog.circle.ms/User/Favorites*",
-                    "https://webcatalog.circle.ms/Circle/List*",
-                    "https://classic-webcatalog.circle.ms/User/Favorites*",
-                    "https://classic-webcatalog.circle.ms/Circle/List*"
-                   ],
+          "https://webcatalog.circle.ms/User/Favorites*",
+          "https://webcatalog.circle.ms/Circle/List*",
+          "https://classic-webcatalog.circle.ms/User/Favorites*",
+          "https://classic-webcatalog.circle.ms/Circle/List*"
+        ],
         "js": ["utils.js", "color-filter.js", "link-replacer.js"],
         "run_at": "document_idle"
       },
       {
         "matches": [
-                    "https://webcatalog.circle.ms/Map*",
-                    "https://classic-webcatalog.circle.ms/Map*"
-              ],
+          "https://webcatalog.circle.ms/Map*",
+          "https://classic-webcatalog.circle.ms/Map*"
+        ],
+        "js": ["map-interceptor.js"],
+        "run_at": "document_start",
+        "world": "MAIN"
+      },
+      {
+        "matches": [
+          "https://webcatalog.circle.ms/Map*",
+          "https://classic-webcatalog.circle.ms/Map*"
+        ],
         "js": ["map-color-filter.js"],
         "run_at": "document_idle"
       }
