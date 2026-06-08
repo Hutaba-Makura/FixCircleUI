@@ -13,11 +13,8 @@
     return String(pathname || '').includes('/Circle/List');
   }
 
-  function getPageFlags(pathname = window.location.pathname) {
-    return {
-      isFavoritesPage: isFavoritesPage(pathname),
-      isCircleListPage: isCircleListPage(pathname)
-    };
+  function isMapPage(pathename = window.location.pathname) {
+    return String(pathname || '').includes('/Map')
   }
 
   function parseModel() {
@@ -87,6 +84,6 @@
     // ページ判定ユーティリティ
     isFavoritesPage,
     isCircleListPage,
-    getPageFlags
+    isMapPage
   });
 })();

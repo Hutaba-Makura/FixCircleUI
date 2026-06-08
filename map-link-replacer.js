@@ -2,8 +2,8 @@
     'use strict';
   
     // ページタイプをチェック
-    const url = window.location.pathname;
-    const isMapPage = url.includes('/Map');
+    const { isMapPage: _isMapPage } = window.FixCircleUI || {};
+    const isMapPage = (_isMapPage || (() => false))();
     
     if (!isMapPage) {
       return; // マップページでない場合は終了
