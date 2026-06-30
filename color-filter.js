@@ -47,131 +47,22 @@
 
     function enableFavoriteColorCss() {
       if (!isFavoritesPage) return;
-      if (enableFavoriteColorCss.installed) {
-        window.setTimeout(() => {
-          window.FixCircleUI?.applyFavoriteColorCss?.();
-        }, 0);
-        return;
-      }
-      enableFavoriteColorCss.installed = true;
 
-      const patchSilverOption = (options) => {
-        if (!options || typeof options !== 'object') return options;
-        if (typeof window.ko?.observable === 'function') {
-          options.isSilver = window.ko.observable(true);
-        } else {
-          options.isSilver = true;
-        }
-        return options;
-      };
+      const model = parseModel();
+      const circles = Array.isArray(model?.Circles) ? model.Circles : [];
+      const detailRows = Array.from(document.querySelectorAll('tr.webcatalog-circle-list-detail'));
 
-      const wrapCut2 = (Cut2) => {
-        if (typeof Cut2 !== 'function' || Cut2.__fixCircleUISilverPatch) {
-          return Cut2;
-        }
+      detailRows.forEach((tr, i) => {
+        const color = circles[i]?.Favorite?.Color;
+        const td = tr.querySelector('td.favorite-color');
+        if (!td || color == null) return;
 
-        const WrappedCut2 = function (...args) {
-          if (args.length > 0) {
-            patchSilverOption(args[0]);
-          }
-          return Reflect.construct(Cut2, args, Cut2);
-        };
+        Array.from(td.classList)
+          .filter(className => /^favorite-color-\d+$/.test(className))
+          .forEach(className => td.classList.remove(className));
 
-        WrappedCut2.prototype = Cut2.prototype;
-        Object.setPrototypeOf(WrappedCut2, Cut2);
-        Object.defineProperty(WrappedCut2, '__fixCircleUISilverPatch', {
-          value: true
-        });
-
-        return WrappedCut2;
-      };
-
-      const patchCut2Constructor = () => {
-        const circle = window.ComiketWebCatalog?.Circle;
-        if (!circle || typeof circle.Cut2 !== 'function') {
-          return false;
-        }
-        circle.Cut2 = wrapCut2(circle.Cut2);
-        return true;
-      };
-
-      const forceFavoriteColorClasses = () => {
-        const model = parseModel();
-        const circles = Array.isArray(model?.Circles) ? model.Circles : [];
-        const detailRows = Array.from(document.querySelectorAll('tr.webcatalog-circle-list-detail'));
-
-        detailRows.forEach((tr, i) => {
-          const color = circles[i]?.Favorite?.Color;
-          const td = tr.querySelector('td.favorite-color');
-          if (!td || color == null) return;
-
-          Array.from(td.classList)
-            .filter(className => /^favorite-color-\d+$/.test(className))
-            .forEach(className => td.classList.remove(className));
-
-          td.classList.add(`favorite-color-${color}`);
-        });
-      };
-
-      const patchKnockoutContexts = () => {
-        const ko = window.ko;
-        if (!ko || typeof ko.contextFor !== 'function') {
-          forceFavoriteColorClasses();
-          return;
-        }
-
-        document.querySelectorAll('[data-bind*="favCss2"]').forEach((el) => {
-          const context = ko.contextFor(el);
-          const candidates = [
-            context?.$root?.TheModel,
-            context?.$parent?.TheModel,
-            context?.$data?.TheModel,
-            window.ComiketWebCatalog?.Circle?.TheModel,
-            window.TheModel
-          ];
-
-          candidates
-            .filter(candidate => candidate && typeof candidate === 'object')
-            .forEach((candidate) => {
-              candidate.isSilver = typeof ko.observable === 'function'
-                ? ko.observable(true)
-                : true;
-            });
-
-          const favCss2 = context?.$data?.favCss2;
-          if (typeof favCss2?.evaluateImmediate === 'function') {
-            favCss2.evaluateImmediate();
-          }
-          if (typeof favCss2?.notifySubscribers === 'function') {
-            favCss2.notifySubscribers(favCss2());
-          }
-        });
-
-        forceFavoriteColorClasses();
-      };
-
-      window.FixCircleUI = Object.assign(window.FixCircleUI || {}, {
-        applyFavoriteColorCss: patchKnockoutContexts
+        td.classList.add(`favorite-color-${color}`);
       });
-
-      if (!patchCut2Constructor()) {
-        let attempts = 0;
-        const timerId = window.setInterval(() => {
-          attempts++;
-          if (patchCut2Constructor() || attempts >= 500) {
-            window.clearInterval(timerId);
-          }
-        }, 20);
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-          window.setTimeout(patchKnockoutContexts, 0);
-          window.setTimeout(patchKnockoutContexts, 500);
-        });
-      } else {
-        window.setTimeout(patchKnockoutContexts, 0);
-      }
     }
 
     enableFavoriteColorCss();
