@@ -28,7 +28,7 @@
           "https://webcatalog.circle.ms/Map*",
           "https://classic-webcatalog.circle.ms/Map*"
         ],
-        "js": ["map-color-filter.js"],
+        "js": ["utils.js", "map-color-filter.js", "map-link-replacer.js"],
         "run_at": "document_idle"
       }
     ],

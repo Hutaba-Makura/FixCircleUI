@@ -13,8 +13,8 @@
     return String(pathname || '').includes('/Circle/List');
   }
 
-  function isMapPage(pathename = window.location.pathname) {
-    return String(pathname || '').includes('/Map')
+  function isMapPage(pathname = window.location.pathname) {
+    return String(pathname || '').includes('/Map');
   }
 
   function parseModel() {
