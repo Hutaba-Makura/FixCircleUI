@@ -12,7 +12,8 @@
           "https://classic-webcatalog.circle.ms/Circle/List*"
         ],
         "js": ["utils.js", "color-filter.js", "link-replacer.js"],
-        "run_at": "document_idle"
+        "run_at": "document_start",
+        "world": "MAIN"
       },
       {
         "matches": [

@@ -44,6 +44,28 @@
   
     // 共通ユーティリティをグローバル名前空間から取得（utils.jsを先に読み込むこと）
     const { parseModel, detectColorFromRow } = window.FixCircleUI;
+
+    function enableFavoriteColorCss() {
+      if (!isFavoritesPage) return;
+
+      const model = parseModel();
+      const circles = Array.isArray(model?.Circles) ? model.Circles : [];
+      const detailRows = Array.from(document.querySelectorAll('tr.webcatalog-circle-list-detail'));
+
+      detailRows.forEach((tr, i) => {
+        const color = circles[i]?.Favorite?.Color;
+        const td = tr.querySelector('td.favorite-color');
+        if (!td || color == null) return;
+
+        Array.from(td.classList)
+          .filter(className => /^favorite-color-\d+$/.test(className))
+          .forEach(className => td.classList.remove(className));
+
+        td.classList.add(`favorite-color-${color}`);
+      });
+    }
+
+    enableFavoriteColorCss();
   
     /**
      * サークルの詳細行に関連する全ての行を取得
@@ -319,6 +341,7 @@
       if (!document.querySelector('.multi-color-filter')) {
         createCheckboxUI();
       }
+      enableFavoriteColorCss();
       applyFilter();
     }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
   })();
