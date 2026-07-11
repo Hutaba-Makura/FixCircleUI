@@ -21,6 +21,7 @@
   };
 
   let latestCircleData = null;
+  let latestCircleKey = '';
 
   function getCircleData(detailJson) {
     if (!detailJson) return null;
@@ -31,13 +32,18 @@
   }
 
   function replaceIconLinks() {
-    if (!latestCircleData) {
+    if (!latestCircleData || !latestCircleKey) {
       return;
     }
 
     const supportLists = Array.from(document.querySelectorAll('.support-list'));
     supportLists.forEach(supportList => {
+      if (supportList.dataset.mapLinkReplacedKey === latestCircleKey) {
+        return;
+      }
+
       processSupportList(supportList, latestCircleData);
+      supportList.dataset.mapLinkReplacedKey = latestCircleKey;
     });
   }
 
@@ -100,12 +106,25 @@
     });
   }
 
+  function getCircleKey(circleData) {
+    return [
+      circleData.Id,
+      circleData.CircleId,
+      circleData.PixivUrl,
+      circleData.TwitterUrl,
+      circleData.WebSite,
+      circleData.NiconicoUrl,
+      circleData.ClipstudioUrl
+    ].join('|');
+  }
+
   window.addEventListener('message', (event) => {
     if (event.source !== window || event.data?.type !== 'CIRCLE_DETAIL_JSON') {
       return;
     }
 
     latestCircleData = getCircleData(event.data.detail);
+    latestCircleKey = latestCircleData ? getCircleKey(latestCircleData) : '';
     replaceIconLinks();
   });
 
